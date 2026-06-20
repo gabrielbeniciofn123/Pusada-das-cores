@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acomodações & Reservas | Pousada das Cores – Cocais MG</title>
+  <meta name="description" content="Conheça todas as acomodações da Pousada das Cores em Cocais MG. Quartos, Day Use e espaço para eventos. Reserve agora pelo WhatsApp!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --green: #2E7D32;
+      --green-light: #4CAF50;
+      --green-dark: #1B5E20;
+      --beige: #F5F1E8;
+      --beige-dark: #EDE8DA;
+      --white: #FFFFFF;
+      --brown: #8D6E63;
+      --text-dark: #1A1A1A;
+      --text-mid: #444;
+      --text-light: #777;
+      --border: #E8EDF2;
+      --shadow: 0 2px 16px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.13);
+      --radius: 14px;
+      --radius-lg: 20px;
+      --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Nunito', sans-serif; background: #f8f9fb; color: var(--text-dark); overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 700; color: var(--text-dark);
+    }
+    .nav-logo img { width: 36px; height: 36px; object-fit: contain; border-radius: 8px; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 18px; border-radius: 50px;
+      border: 1.5px solid var(--border);
+      font-size: 0.85rem; font-weight: 600; color: var(--text-mid);
+      transition: var(--transition);
+    }
+    .nav-back:hover { background: var(--beige); border-color: #cdd4dc; }
+    .nav-wa {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 18px; border-radius: 50px;
+      background: #25D366; color: #fff;
+      font-size: 0.85rem; font-weight: 600;
+      box-shadow: 0 3px 14px rgba(37,211,102,0.30);
+      transition: var(--transition);
+    }
+    .nav-wa:hover { background: #20BA5A; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      margin-top: 64px;
+      height: 420px; position: relative;
+      display: flex; align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('imag/PousadaPrimeira.png') center/cover no-repeat;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.25) 60%, transparent 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 40px 48px; width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff; padding: 5px 14px; border-radius: 50px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 14px;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: #fff; line-height: 1.15; margin-bottom: 12px;
+    }
+    .hero-title em { font-style: italic; color: #A5D6A7; }
+    .hero-sub { color: rgba(255,255,255,0.78); font-size: 1rem; max-width: 520px; }
+    .hero-stats {
+      display: flex; gap: 28px; margin-top: 20px;
+    }
+    .h-stat { display: flex; align-items: center; gap: 7px; }
+    .h-stat i { color: #A5D6A7; font-size: 0.88rem; }
+    .h-stat span { color: rgba(255,255,255,0.80); font-size: 0.85rem; font-weight: 500; }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 40px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 36px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.82rem; font-weight: 600; color: var(--text-mid);
+    }
+    .trust-item i { color: var(--green); font-size: 0.9rem; }
+
+    /* ── FILTER TABS ── */
+    .filter-wrap {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+      position: sticky; top: 64px; z-index: 50;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .filter-tabs {
+      display: flex; gap: 0; overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .filter-tabs::-webkit-scrollbar { display: none; }
+    .ftab {
+      display: flex; align-items: center; gap: 7px;
+      padding: 18px 24px; font-size: 0.88rem; font-weight: 600;
+      color: var(--text-light); cursor: pointer;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap; transition: var(--transition);
+      background: none; border-left: none; border-right: none; border-top: none;
+      font-family: inherit;
+    }
+    .ftab:hover { color: var(--text-dark); }
+    .ftab.active { color: var(--green); border-bottom-color: var(--green); }
+    .ftab .count {
+      background: #f0f4f8; color: var(--text-light);
+      padding: 2px 7px; border-radius: 10px; font-size: 0.72rem;
+    }
+    .ftab.active .count { background: rgba(46,125,50,0.12); color: var(--green); }
+
+    /* ── LISTINGS ── */
+    .listings-wrap { max-width: 1100px; margin: 0 auto; padding: 36px 24px 80px; }
+
+    .section-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 24px; gap: 12px; flex-wrap: wrap;
+    }
+    .section-head h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+    }
+    .section-head p { font-size: 0.85rem; color: var(--text-light); }
+
+    /* — Banner café da manhã — */
+    .incl-banner {
+      display: flex; align-items: center; gap: 12px;
+      background: linear-gradient(135deg, rgba(46,125,50,0.08), rgba(76,175,80,0.05));
+      border: 1.5px solid rgba(46,125,50,0.18);
+      border-radius: var(--radius); padding: 14px 20px;
+      margin-bottom: 28px;
+    }
+    .incl-banner i { color: var(--green); font-size: 1.2rem; flex-shrink: 0; }
+    .incl-banner p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.5; }
+    .incl-banner strong { color: var(--green-dark); }
+
+    /* — Listing card — */
+    .listing-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .listing-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+
+    /* Imagem */
+    .listing-img-wrap { position: relative; overflow: hidden; height: 100%; min-height: 280px; }
+    .listing-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .listing-card:hover .listing-img-wrap img { transform: scale(1.04); }
+    .listing-badge {
+      position: absolute; top: 16px; left: 16px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .badge-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 12px; border-radius: 50px;
+      font-size: 0.72rem; font-weight: 700; white-space: nowrap;
+    }
+    .pill-green { background: var(--green); color: #fff; }
+    .pill-orange { background: #F57C00; color: #fff; }
+    .pill-blue { background: #1976D2; color: #fff; }
+    .pill-glass {
+      background: rgba(255,255,255,0.20); backdrop-filter: blur(8px);
+      color: #fff; border: 1px solid rgba(255,255,255,0.30);
+    }
+    .img-thumbs {
+      position: absolute; bottom: 12px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; gap: 5px;
+    }
+    .img-thumbs span {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: rgba(255,255,255,0.50);
+    }
+    .img-thumbs span.active { background: #fff; width: 18px; border-radius: 4px; }
+
+    /* Info */
+    .listing-info { padding: 28px 28px 24px; display: flex; flex-direction: column; }
+    .listing-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+    .listing-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 700; color: var(--text-dark);
+      line-height: 1.2;
+    }
+    .listing-rating {
+      display: flex; align-items: center; gap: 5px;
+      flex-shrink: 0;
+    }
+    .listing-rating .stars { color: #F59E0B; font-size: 0.82rem; }
+    .listing-rating .score { font-weight: 700; font-size: 0.9rem; }
+    .listing-rating .reviews { font-size: 0.78rem; color: var(--text-light); }
+    .listing-meta {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      margin-bottom: 14px;
+    }
+    .meta-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.82rem; color: var(--text-mid);
+    }
+    .meta-item i { color: var(--green); font-size: 0.78rem; width: 14px; text-align: center; }
+    .listing-desc {
+      font-size: 0.88rem; color: var(--text-mid);
+      line-height: 1.75; margin-bottom: 16px;
+      display: -webkit-box; -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .listing-desc.expanded { -webkit-line-clamp: unset; }
+    .read-more {
+      font-size: 0.82rem; color: var(--green);
+      font-weight: 600; cursor: pointer;
+      background: none; border: none; padding: 0;
+      margin-bottom: 16px; text-align: left;
+      font-family: inherit;
+    }
+
+    /* Amenidades */
+    .amenities-row {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 20px;
+    }
+    .amenity-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 11px; background: #f0f4f8;
+      border-radius: 8px; font-size: 0.76rem; font-weight: 600;
+      color: var(--text-mid);
+    }
+    .amenity-tag i { color: var(--green); font-size: 0.78rem; }
+
+    /* Preço + botão */
+    .listing-footer {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+    }
+    .price-box { }
+    .price-from { font-size: 0.72rem; color: var(--text-light); text-transform: uppercase; letter-spacing: .5px; }
+    .price-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem; font-weight: 700; color: var(--text-dark);
+      line-height: 1;
+    }
+    .price-value sup { font-size: 1rem; font-weight: 700; vertical-align: super; margin-right: 2px; font-family: 'Nunito', sans-serif; }
+    .price-period { font-size: 0.78rem; color: var(--text-light); margin-top: 2px; }
+    .price-note { font-size: 0.73rem; color: var(--green-dark); font-weight: 600; margin-top: 3px; }
+    .btn-reserve {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 24px; border-radius: 50px;
+      background: #25D366; color: #fff;
+      font-family: 'Nunito', sans-serif; font-size: 0.9rem; font-weight: 700;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.30);
+      transition: var(--transition); white-space: nowrap;
+      border: none; cursor: pointer;
+    }
+    .btn-reserve:hover { background: #20BA5A; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,211,102,0.42); }
+
+    /* — Day Use card especial — */
+    .dayuse-card { grid-template-columns: 1fr; }
+    .dayuse-card .listing-img-wrap { height: 320px; min-height: unset; }
+    .dayuse-inner { display: grid; grid-template-columns: 380px 1fr; }
+    .dayuse-prices {
+      display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .price-option {
+      flex: 1; min-width: 180px;
+      border: 2px solid var(--border); border-radius: var(--radius);
+      padding: 16px 18px; transition: var(--transition); cursor: default;
+    }
+    .price-option.featured { border-color: var(--green); background: rgba(46,125,50,0.04); }
+    .price-option .opt-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text-light); margin-bottom: 6px; }
+    .price-option .opt-price { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--text-dark); }
+    .price-option .opt-desc { font-size: 0.78rem; color: var(--text-light); margin-top: 3px; }
+    .price-option.featured .opt-label { color: var(--green); }
+
+    /* — Auditório card especial — */
+    .event-card { border: 2px solid rgba(46,125,50,0.25); }
+    .event-card .listing-name { color: var(--green-dark); }
+
+    /* — Seção separadora — */
+    .divider-section {
+      display: flex; align-items: center; gap: 16px;
+      margin: 40px 0 28px;
+    }
+    .divider-section hr { flex: 1; border: none; border-top: 1px solid var(--border); }
+    .divider-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; white-space: nowrap; color: var(--text-dark);
+    }
+
+    /* — Highlights section — */
+    .highlights-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 14px; margin-bottom: 40px;
+    }
+    .highlight-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 18px 20px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .hl-icon {
+      width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .hl-icon.g { background: rgba(46,125,50,0.10); color: var(--green); }
+    .hl-icon.b { background: rgba(25,118,210,0.10); color: #1976D2; }
+    .hl-icon.o { background: rgba(245,124,0,0.10); color: #F57C00; }
+    .hl-title { font-size: 0.88rem; font-weight: 700; margin-bottom: 2px; }
+    .hl-desc { font-size: 0.78rem; color: var(--text-light); line-height: 1.4; }
+
+    /* — CTA bottom — */
+    .cta-section {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; color: #fff; margin-bottom: 12px;
+    }
+    .cta-section p { color: rgba(255,255,255,0.80); font-size: 1rem; margin-bottom: 28px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .cta-btns .btn-wa {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; background: #fff; color: var(--green-dark);
+      border-radius: 50px; font-weight: 700; font-size: 0.95rem;
+      transition: var(--transition); box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .cta-btns .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.20); }
+    .cta-btns .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; background: rgba(255,255,255,0.12); color: #fff;
+      border-radius: 50px; font-weight: 600; font-size: 0.95rem;
+      border: 1.5px solid rgba(255,255,255,0.35); transition: var(--transition);
+    }
+    .cta-btns .btn-outline:hover { background: rgba(255,255,255,0.20); }
+
+    /* — WhatsApp float — */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    }
+    .wa-float a {
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25D366; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.65rem;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.45);
+      transition: var(--transition);
+      animation: pulse 2.5s infinite;
+    }
+    .wa-float a:hover { transform: scale(1.1); }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.55); }
+      70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    /* — RESPONSIVE — */
+    @media (max-width: 900px) {
+      .listing-card { grid-template-columns: 1fr; }
+      .listing-img-wrap { height: 260px; min-height: unset; }
+      .dayuse-inner { grid-template-columns: 1fr; }
+      .highlights-grid { grid-template-columns: 1fr 1fr; }
+      .hero { height: 340px; }
+      .hero-content { padding: 0 24px 36px; }
+      .trust-bar { padding: 12px 24px; gap: 20px; }
+      .filter-wrap { padding: 0 16px; }
+    }
+    @media (max-width: 600px) {
+      .hero { height: 300px; }
+      .hero-stats { flex-wrap: wrap; gap: 14px; }
+      .listings-wrap { padding: 24px 16px 60px; }
+      .listing-info { padding: 20px 18px 18px; }
+      .listing-footer { flex-direction: column; align-items: flex-start; }
+      .btn-reserve { width: 100%; justify-content: center; }
+      .dayuse-prices { flex-direction: column; }
+      .highlights-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 36px 24px; }
+      .cta-section h2 { font-size: 1.4rem; }
+      .cta-btns { flex-direction: column; align-items: center; }
+      .trust-item span { display: none; }
+    }
+    @media (max-width: 400px) {
+      .listing-name { font-size: 1.15rem; }
+      .price-value { font-size: 1.4rem; }
+    }
+
+    /* ══════════════════════════════
+       MODAL DETALHES DO QUARTO
+    ══════════════════════════════ */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      align-items: center; justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .room-modal {
+      background: var(--white); border-radius: var(--radius-lg);
+      width: 100%; max-width: 960px;
+      max-height: 92vh; overflow: hidden;
+      display: flex; flex-direction: column;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.30);
+      animation: modalIn .28s ease;
+    }
+    @keyframes modalIn {
+      from { opacity:0; transform: translateY(20px) scale(0.98); }
+      to   { opacity:1; transform: translateY(0) scale(1); }
+    }
+
+    /* Modal header */
+    .modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 24px; border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .modal-header-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 700;
+    }
+    .modal-close-btn {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #f0f4f8; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: var(--text-mid);
+      transition: var(--transition);
+    }
+    .modal-close-btn:hover { background: #e2e8f0; color: var(--text-dark); }
+
+    /* Modal body: scroll container */
+    .modal-body { overflow-y: auto; flex: 1; }
+
+    /* Gallery */
+    .modal-gallery {
+      position: relative; height: 320px; overflow: hidden;
+      background: #1a1a1a; flex-shrink: 0;
+    }
+    .gallery-slides { display: flex; height: 100%; transition: transform .4s cubic-bezier(.4,0,.2,1); }
+    .gallery-slide { min-width: 100%; height: 100%; }
+    .gallery-slide img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.90); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem; color: var(--text-dark);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.20);
+      transition: var(--transition); z-index: 2;
+    }
+    .gallery-btn:hover { background: #fff; transform: translateY(-50%) scale(1.05); }
+    .gallery-btn.prev { left: 14px; }
+    .gallery-btn.next { right: 14px; }
+    .gallery-dots {
+      position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 6px; z-index: 2;
+    }
+    .gallery-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: rgba(255,255,255,0.55); border: none; cursor: pointer;
+      transition: var(--transition); padding: 0;
+    }
+    .gallery-dot.active { background: #fff; width: 20px; border-radius: 4px; }
+    .gallery-counter {
+      position: absolute; top: 12px; right: 14px;
+      background: rgba(0,0,0,0.55); color: #fff;
+      font-size: 0.75rem; font-weight: 600;
+      padding: 4px 10px; border-radius: 20px;
+    }
+
+    /* Tab system */
+    .modal-tabs {
+      display: flex; border-bottom: 1px solid var(--border);
+      padding: 0 24px; flex-shrink: 0; background: var(--white);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .modal-tab {
+      padding: 14px 20px; font-size: 0.87rem; font-weight: 600;
+      color: var(--text-light); cursor: pointer;
+      border-bottom: 3px solid transparent; border-left: none; border-right: none; border-top: none;
+      background: none; font-family: inherit; transition: var(--transition);
+      white-space: nowrap;
+    }
+    .modal-tab:hover { color: var(--text-dark); }
+    .modal-tab.active { color: var(--green); border-bottom-color: var(--green); }
+    .modal-tab-panel { display: none; padding: 24px; }
+    .modal-tab-panel.active { display: block; }
+
+    /* Sobre tab */
+    .modal-meta-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px; margin-bottom: 24px;
+    }
+    .modal-meta-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 14px; background: #f8f9fb;
+      border-radius: 10px; font-size: 0.82rem;
+    }
+    .modal-meta-item i { color: var(--green); width: 16px; text-align: center; font-size: 0.88rem; }
+    .modal-meta-item .m-label { color: var(--text-light); font-size: 0.72rem; margin-bottom: 1px; }
+    .modal-meta-item .m-val { font-weight: 600; color: var(--text-dark); }
+    .modal-desc { font-size: 0.92rem; color: var(--text-mid); line-height: 1.85; }
+    .modal-desc p { margin-bottom: 12px; }
+    .modal-desc p:last-child { margin-bottom: 0; }
+    .modal-desc strong { color: var(--text-dark); }
+    .modal-section-title {
+      font-size: 0.78rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--text-light);
+      margin: 24px 0 12px;
+    }
+    .modal-includes {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;
+    }
+    .incl-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 13px; background: rgba(46,125,50,0.08);
+      border: 1px solid rgba(46,125,50,0.18);
+      border-radius: 8px; font-size: 0.78rem; font-weight: 600;
+      color: var(--green-dark);
+    }
+    .incl-tag i { font-size: 0.72rem; }
+
+    /* Comodidades tab */
+    .amenities-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .amenity-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 14px; border-radius: 10px;
+      border: 1px solid var(--border); font-size: 0.85rem; color: var(--text-mid);
+    }
+    .amenity-row i { color: var(--green); width: 18px; text-align: center; font-size: 1rem; flex-shrink: 0; }
+    .amenity-row .a-name { font-weight: 600; color: var(--text-dark); }
+    .amenity-row .a-desc { font-size: 0.74rem; color: var(--text-light); margin-top: 1px; }
+    .amenity-unavail { opacity: 0.4; }
+    .amenity-unavail i { color: var(--text-light); }
+
+    /* Políticas tab */
+    .policies-list { display: flex; flex-direction: column; gap: 16px; }
+    .policy-item {
+      display: flex; gap: 14px;
+      padding: 16px 18px; border-radius: 12px; border: 1px solid var(--border);
+    }
+    .policy-icon {
+      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .policy-icon.green { background: rgba(46,125,50,0.10); color: var(--green); }
+    .policy-icon.blue  { background: rgba(25,118,210,0.10); color: #1976D2; }
+    .policy-icon.orange{ background: rgba(245,124,0,0.10); color: #F57C00; }
+    .policy-icon.red   { background: rgba(229,57,53,0.10); color: #E53935; }
+    .policy-title { font-size: 0.9rem; font-weight: 700; margin-bottom: 5px; }
+    .policy-body { font-size: 0.83rem; color: var(--text-mid); line-height: 1.6; }
+
+    /* Modal sticky footer */
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-shrink: 0; background: var(--white);
+      flex-wrap: wrap;
+    }
+    .modal-footer .mf-price { }
+    .modal-footer .mf-from { font-size: 0.72rem; color: var(--text-light); }
+    .modal-footer .mf-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 700; color: var(--text-dark); line-height: 1;
+    }
+    .modal-footer .mf-period { font-size: 0.78rem; color: var(--text-light); margin-top: 2px; }
+    .modal-footer .btn-wa-modal {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 24px; border-radius: 50px;
+      background: #25D366; color: #fff;
+      font-weight: 700; font-size: 0.92rem;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.30);
+      transition: var(--transition); border: none; cursor: pointer;
+      font-family: inherit;
+    }
+    .modal-footer .btn-wa-modal:hover { background: #20BA5A; transform: translateY(-1px); }
+
+    /* Botão Ver detalhes nos cards */
+    .btn-details {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 11px 18px; border-radius: 50px;
+      background: #f0f4f8; border: 1.5px solid var(--border);
+      font-size: 0.85rem; font-weight: 600; color: var(--text-mid);
+      cursor: pointer; transition: var(--transition); font-family: inherit;
+    }
+    .btn-details:hover { background: #e2e8f0; color: var(--text-dark); }
+
+    /* Responsive modal */
+    @media (max-width: 640px) {
+      .modal-overlay { padding: 0; align-items: flex-end; }
+      .room-modal { border-radius: var(--radius-lg) var(--radius-lg) 0 0; max-height: 96vh; }
+      .modal-gallery { height: 240px; }
+      .modal-footer { flex-direction: column; align-items: stretch; }
+      .modal-footer .btn-wa-modal { justify-content: center; }
+      .modal-tabs { overflow-x: auto; scrollbar-width: none; }
+      .modal-tabs::-webkit-scrollbar { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="imag/logo.jpg" alt="Logo" />
+    Pousada das Cores
+  </a>
+  <div class="nav-actions">
+    <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Voltar ao site</a>
+    <a href="https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+fazer+uma+reserva+na+Pousada+das+Cores." target="_blank" class="nav-wa"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><i class="fas fa-star"></i> Nota 9,2 · Cocais – Barão de Cocais / MG</div>
+    <h1 class="hero-title">Nossas <em>Acomodações</em></h1>
+    <p class="hero-sub">Do Day Use ao quarto família — encontre a hospedagem perfeita para você, sua família ou seu evento.</p>
+    <div class="hero-stats">
+      <div class="h-stat"><i class="fas fa-bed"></i><span>7 tipos de acomodação</span></div>
+      <div class="h-stat"><i class="fas fa-coffee"></i><span>Café da manhã incluso</span></div>
+      <div class="h-stat"><i class="fas fa-swimming-pool"></i><span>Piscina adulto e infantil</span></div>
+      <div class="h-stat"><i class="fas fa-shield-alt"></i><span>Melhor preço garantido</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-item"><i class="fas fa-check-circle"></i><span>Reserva direta — sem taxas</span></div>
+  <div class="trust-item"><i class="fas fa-calendar-check"></i><span>Confirmação imediata pelo WhatsApp</span></div>
+  <div class="trust-item"><i class="fas fa-headset"></i><span>Atendimento 7h às 22h</span></div>
+  <div class="trust-item"><i class="fas fa-lock"></i><span>Pagamento seguro</span></div>
+  <div class="trust-item"><i class="fas fa-map-marker-alt"></i><span>100 km de BH</span></div>
+</div>
+
+<!-- ── FILTER TABS ── -->
+<div class="filter-wrap">
+  <div class="filter-tabs" id="filterTabs">
+    <button class="ftab active" data-filter="all" onclick="filterCards(this)">
+      <i class="fas fa-th-large"></i> Todos <span class="count">7</span>
+    </button>
+    <button class="ftab" data-filter="dayuse" onclick="filterCards(this)">
+      <i class="fas fa-sun"></i> Day Use <span class="count">1</span>
+    </button>
+    <button class="ftab" data-filter="quarto" onclick="filterCards(this)">
+      <i class="fas fa-bed"></i> Quartos <span class="count">5</span>
+    </button>
+    <button class="ftab" data-filter="evento" onclick="filterCards(this)">
+      <i class="fas fa-building"></i> Eventos <span class="count">1</span>
+    </button>
+  </div>
+</div>
+
+<!-- ── LISTINGS ── -->
+<div class="listings-wrap">
+
+  <!-- Highlights -->
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <div class="hl-icon g"><i class="fas fa-coffee"></i></div>
+      <div><div class="hl-title">Café da manhã incluso</div><div class="hl-desc">Pão de queijo, quitandas, frios e muito mais</div></div>
+    </div>
+    <div class="highlight-card">
+      <div class="hl-icon b"><i class="fas fa-swimming-pool"></i></div>
+      <div><div class="hl-title">Piscina adulto e infantil</div><div class="hl-desc">Estrutura completa para toda a família</div></div>
+    </div>
+    <div class="highlight-card">
+      <div class="hl-icon o"><i class="fas fa-mountain"></i></div>
+      <div><div class="hl-title">Natureza e trilhas</div><div class="hl-desc">Cachoeiras, Pedra Pintada e Serra do Caraça próximos</div></div>
+    </div>
+  </div>
+
+  <!-- ─────────── DAY USE ─────────── -->
+  <div class="divider-section" data-type="dayuse">
+    <hr /><h3><i class="fas fa-sun" style="color:#F57C00;margin-right:8px;"></i>Day Use</h3><hr />
+  </div>
+
+  <div class="listing-card dayuse-card" data-type="dayuse">
+    <div class="listing-img-wrap">
+      <img src="imag/piscina.jpg" alt="Day Use Pousada das Cores" loading="lazy" />
+      <div class="listing-badge">
+        <span class="badge-pill pill-orange"><i class="fas fa-sun"></i> Day Use</span>
+        <span class="badge-pill pill-glass"><i class="fas fa-users"></i> Até 100 pessoas</span>
+      </div>
+    </div>
+    <div class="dayuse-inner">
+      <div class="listing-info">
+        <div class="listing-top">
+          <h2 class="listing-name">Day Use — Pousada das Cores</h2>
+          <div class="listing-rating">
+            <div class="stars">★★★★★</div>
+            <span class="score">9,4</span>
+            <span class="reviews">(187)</span>
+          </div>
+        </div>
+        <div class="listing-meta">
+          <div class="meta-item"><i class="fas fa-clock"></i> 9h às 16h30</div>
+          <div class="meta-item"><i class="fas fa-calendar-day"></i> Agendamento prévio</div>
+          <div class="meta-item"><i class="fas fa-map-marker-alt"></i> Cocais – Barão de Cocais/MG</div>
+          <div class="meta-item"><i class="fas fa-exclamation-circle" style="color:#F57C00;"></i> Vagas limitadas</div>
+        </div>
+        <p class="listing-desc" id="desc-dayuse">
+          Venha aproveitar um dia especial em meio à natureza, com lazer, descanso e boa comida. Piscina adulto e infantil, área de jogos (sinuca, totó e baralho), área de mata, visita à área de fazenda e passeio a cavalo opcional. Em breve: pesque e pague e piscina natural. <strong>Quartos não incluídos no Day Use.</strong>
+        </p>
+        <button class="read-more" onclick="toggleDesc('desc-dayuse',this)">Ler mais</button>
+        <div class="amenities-row">
+          <div class="amenity-tag"><i class="fas fa-swimming-pool"></i> Piscina Adulto</div>
+          <div class="amenity-tag"><i class="fas fa-child"></i> Piscina Infantil</div>
+          <div class="amenity-tag"><i class="fas fa-gamepad"></i> Área de Jogos</div>
+          <div class="amenity-tag"><i class="fas fa-wifi"></i> Wi-Fi</div>
+          <div class="amenity-tag"><i class="fas fa-hiking"></i> Trilhas</div>
+          <div class="amenity-tag"><i class="fas fa-horse"></i> Passeio a Cavalo*</div>
+          <div class="amenity-tag"><i class="fas fa-tractor"></i> Área de Fazenda</div>
+        </div>
+
+        <!-- Opções de preço Day Use -->
+        <div class="dayuse-prices">
+          <div class="price-option">
+            <div class="opt-label">Sem alimentação</div>
+            <div class="opt-price">R$ 49<sup style="font-size:.85rem;">,00</sup></div>
+            <div class="opt-desc">Por pessoa · 9h às 16h30</div>
+          </div>
+          <div class="price-option featured">
+            <div class="opt-label"><i class="fas fa-star" style="margin-right:4px;font-size:.7rem;"></i> Com alimentação</div>
+            <div class="opt-price">R$ 98<sup style="font-size:.85rem;">,00</sup></div>
+            <div class="opt-desc">Inclui almoço + café da tarde · Self service</div>
+          </div>
+        </div>
+
+        <div class="listing-footer">
+          <div>
+            <div class="price-note"><i class="fas fa-utensils" style="margin-right:4px;"></i> Almoço: 11h30 às 13h30 · Buffet + 1 carne</div>
+            <div class="price-note" style="margin-top:4px;"><i class="fas fa-phone" style="margin-right:4px;"></i> (31) 97215-1140 · Agendamento prévio</div>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+            <button class="btn-details" onclick="openRoom('dayuse')"><i class="fas fa-eye"></i> Ver detalhes</button>
+            <a href="https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Day+Use+na+Pousada+das+Cores." target="_blank" class="btn-reserve"><i class="fab fa-whatsapp"></i> Reservar Day Use</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────── QUARTOS ─────────── -->
+  <div class="divider-section" data-type="quarto">
+    <hr /><h3><i class="fas fa-bed" style="color:var(--green);margin-right:8px;"></i>Quartos</h3><hr />
+  </div>
+
+  <div class="incl-banner">
+    <i class="fas fa-coffee"></i>
+    <p><strong>Café da manhã incluso</strong> em todas as hospedagens — Pão de queijo, tapioca, frios, frutas, bolos e quitandas mineiras servidos diariamente.</p>
+  </div>
+
+  <!-- Quarto Solteiro -->
+  <div class="listing-card" data-type="quarto">
+    <div class="listing-img-wrap">
+      <img src="imag/quarto_solteiro.jpg" alt="Quarto Solteiro Pousada das Cores" loading="lazy" />
+      <div class="listing-badge">
+        <span class="badge-pill pill-green"><i class="fas fa-check"></i> Disponível</span>
+      </div>
+    </div>
+    <div class="listing-info">
+      <div class="listing-top">
+        <h2 class="listing-name">Quarto Solteiro</h2>
+        <div class="listing-rating">
+          <div class="stars">★★★★★</div>
+          <span class="score">9,1</span>
+          <span class="reviews">(64)</span>
+        </div>
+      </div>
+      <div class="listing-meta">
+        <div class="meta-item"><i class="fas fa-user"></i> 1 pessoa</div>
+        <div class="meta-item"><i class="fas fa-bed"></i> 1 cama solteiro</div>
+        <div class="meta-item"><i class="fas fa-bath"></i> Banheiro privativo</div>
+        <div class="meta-item"><i class="fas fa-building"></i> 1º andar</div>
+      </div>
+      <p class="listing-desc" id="desc-solteiro">
+        Acomodação confortável e funcional, ideal para até 1 pessoa, com ambiente aconchegante, banheiro privativo, Wi-Fi, ventilador potente e silencioso, além de vista para o jardim. A pousada também oferece cozinha compartilhada, com geladeira e demais itens de apoio — comodidade e praticidade durante a estadia.
+      </p>
+      <button class="read-more" onclick="toggleDesc('desc-solteiro',this)">Ler mais</button>
+      <div class="amenities-row">
+        <div class="amenity-tag"><i class="fas fa-wifi"></i> Wi-Fi</div>
+        <div class="amenity-tag"><i class="fas fa-swimming-pool"></i> Piscina</div>
+        <div class="amenity-tag"><i class="fas fa-seedling"></i> Vista jardim</div>
+        <div class="amenity-tag"><i class="fas fa-coffee"></i> Café da manhã</div>
+        <div class="amenity-tag"><i class="fas fa-wind"></i> Ventilador</div>
+        <div class="amenity-tag"><i class="fas fa-utensils"></i> Cozinha compartilhada</div>
+      </div>
+      <div class="listing-footer">
+        <div class="price-box">
+          <div class="price-from">A partir de</div>
+          <div class="price-value"><sup>R$</sup>215<span style="font-size:1rem;">,00</span></div>
+          <div class="price-period">por noite · 1 pessoa</div>
+          <div class="price-note"><i class="fas fa-coffee"></i> Café da manhã incluso</div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <button class="btn-details" onclick="openRoom('solteiro')"><i class="fas fa-eye"></i> Ver detalhes</button>
+          <a href="https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Quarto+Solteiro." target="_blank" class="btn-reserve"><i class="fab fa-whatsapp"></i> Reservar agora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quarto Casal -->
+  <div class="listing-card" data-type="quarto">
+    <div class="listing-img-wrap">
+      <img src="imag/quarto_casal.jpg" alt="Quarto Casal Pousada das Cores" loading="lazy" />
+      <div class="listing-badge">
+        <span class="badge-pill pill-green"><i class="fas fa-fire"></i> Mais reservado</span>
+      </div>
+    </div>
+    <div class="listing-info">
+      <div class="listing-top">
+        <h2 class="listing-name">Quarto Casal / Duplo</h2>
+        <div class="listing-rating">
+          <div class="stars">★★★★★</div>
+          <span class="score">9,3</span>
+          <span class="reviews">(128)</span>
+        </div>
+      </div>
+      <div class="listing-meta">
+        <div class="meta-item"><i class="fas fa-users"></i> 2 pessoas</div>
+        <div class="meta-item"><i class="fas fa-bed"></i> 1 cama casal</div>
+        <div class="meta-item"><i class="fas fa-bath"></i> Banheiro privativo</div>
+        <div class="meta-item"><i class="fas fa-building"></i> 1º andar</div>
+      </div>
+      <p class="listing-desc" id="desc-casal">
+        Acomodação confortável e funcional, ideal para até 2 pessoas, com ambiente aconchegante, cama de casal, banheiro privativo, Wi-Fi, ventilador potente e silencioso, além de vista para o jardim. Perfeito para casais que buscam tranquilidade e contato com a natureza mineira. A pousada também oferece cozinha compartilhada.
+      </p>
+      <button class="read-more" onclick="toggleDesc('desc-casal',this)">Ler mais</button>
+      <div class="amenities-row">
+        <div class="amenity-tag"><i class="fas fa-wifi"></i> Wi-Fi</div>
+        <div class="amenity-tag"><i class="fas fa-swimming-pool"></i> Piscina</div>
+        <div class="amenity-tag"><i class="fas fa-seedling"></i> Vista jardim</div>
+        <div class="amenity-tag"><i class="fas fa-coffee"></i> Café da manhã</div>
+        <div class="amenity-tag"><i class="fas fa-wind"></i> Ventilador</div>
+        <div class="amenity-tag"><i class="fas fa-utensils"></i> Cozinha compartilhada</div>
+      </div>
+      <div class="listing-footer">
+        <div class="price-box">
+          <div class="price-from">A partir de</div>
+          <div class="price-value"><sup>R$</sup>289<span style="font-size:1rem;">,00</span></div>
+          <div class="price-period">por noite · 2 pessoas</div>
+          <div class="price-note"><i class="fas fa-coffee"></i> Café da manhã incluso</div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <button class="btn-details" onclick="openRoom('casal')"><i class="fas fa-eye"></i> Ver detalhes</button>
+          <a href="https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Quarto+Casal." target="_blank" class="btn-reserve"><i class="fab fa-whatsapp"></i> Reservar agora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quarto Triplo -->
+  <div class="listing-card" data-type="quarto">
+    <div class="listing-img-wrap">
+      <img src="imag/quarto_triplo.jpg" alt="Quarto Triplo Pousada das Cores" loading="lazy" />
+      <div class="listing-badge">
+        <span class="badge-pill pill-glass"><i class="fas fa-users"></i> Até 3 hóspedes</span>
+      </div>
+    </div>
+    <div class="listing-info">
+      <div class="listing-top">
+        <h2 class="listing-name">Quarto Triplo</h2>
+        <div class="listing-rating">
+          <div class="stars">★★★★★</div>
+          <span class="score">9,0</span>
+          <span class="reviews">(52)</span>
+        </div>
+      </div>
+      <div class="listing-meta">
+        <div class="meta-item"><i class="fas fa-users"></i> Até 3 pessoas</div>
+        <div class="meta-item"><i class="fas fa-bed"></i> 1 casal + 1 solteiro</div>
+        <div class="meta-item"><i class="fas fa-bath"></i> Banheiro privativo</div>
+        <div class="meta-item"><i class="fas fa-building"></i> 1º andar</div>
+      </div>
+      <p class="listing-desc" id="desc-triplo">
+        Acomodação confortável e funcional para até 3 pessoas, com 1 cama de casal e 1 cama de solteiro, banheiro privativo, Wi-Fi, ventilador potente e silencioso, além de vista para o jardim. Ideal para famílias pequenas ou grupo de amigos que buscam conforto sem abrir mão da praticidade.
+      </p>
+      <button class="read-more" onclick="toggleDesc('desc-triplo',this)">Ler mais</button>
+      <div class="amenities-row">
+        <div class="amenity-tag"><i class="fas fa-wifi"></i> Wi-Fi</div>
+        <div class="amenity-tag"><i class="fas fa-swimming-pool"></i> Piscina</div>
+        <div class="amenity-tag"><i class="fas fa-coffee"></i> Café da manhã</div>
+        <div class="amenity-tag"><i class="fas fa-wind"></i> Ventilador</div>
+        <div class="amenity-tag"><i class="fas fa-utensils"></i> Cozinha compartilhada</div>
+      </div>
+      <div class="listing-footer">
+        <div class="price-box">
+          <div class="price-from">A partir de</div>
+          <div class="price-value"><sup>R$</sup>315<span style="font-size:1rem;">,00</span></div>
+          <div class="price-period">por noite · até 3 pessoas</div>
+          <div class="price-note"><i class="fas fa-coffee"></i> Café da manhã incluso</div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <button class="btn-details" onclick="openRoom('triplo')"><i class="fas fa-eye"></i> Ver detalhes</button>
+          <a href="https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Quarto+Triplo." target="_blank" class="btn-reserve"><i class="fab fa-whatsapp"></i> Reservar agora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quarto Quádruplo -->
+  <div class="listing-card" data-type="quarto">
+    <div class="listing-img-wrap">
+      <img src="imag/quarto_quadruplo.jpg" alt="Quarto Quádruplo Pousada das Cores" loading="lazy" />
+      <div class="listing-badge">
+        <span class="badge-pill pill-blue"><i class="fas fa-child"></i> Ideal para famílias</span>
+      </div>
+    </div>
+    <div class="listing-info">
+      <div class="listing-top">
+        <h2 class="listing-name">Quarto Quádruplo</h2>
+        <div class="listing-rating">
+          <div class="stars">★★★★★</div>
+          <span class="score">9,2</span>
+          <span class="reviews">(43)</span>
+        </div>
+      </div>
+      <div class="listing-meta">
+        <div class="meta-item"><i class="fas fa-users"></i> 4 pessoas</div>
+        <div class="meta-item"><i class="fas fa-bed"></i> 1 casal + 2 solteiros</div>
+        <div class="meta-item"><i class="fas fa-bath"></i> Banheiro privativo</div>
+        <div class="meta-item"><i class="fas fa-building"></i> 1º andar</div>
+      </div>
+      <p class="listing-desc" id="desc-quad">
+        Ideal para famílias ou pequenos grupos, o quarto acomoda até 4 pessoas com 1 cama de casal e 2 camas de solteiro, banheiro privativo, Wi-Fi, frigobar, ventilador potente e silencioso e uma agradável vista para o jardim. Conforto, praticidade e tranquilidade para uma estadia inesquecível.
+      </p>
+      <button class="read-more" onclick="toggleDesc('desc-quad',this)">Ler mais</button>
+      <div class="amenities-row">
+        <div class="amenity-tag"><i class="fas fa-wifi"></i> Wi-Fi</div>
+        <div class="amenity-tag"><i class="fas fa-swimming-pool"></i> Piscina</div>
+        <div class="amenity-tag"><i class="fas fa-snowflake"></i> Frigobar</div>
+        <div class="amenity-tag"><i class="fas fa-coffee"></i> Café da manhã</div>
+        <div class="amenity-tag"><i class="fas fa-seedling"></i> Vista jardim</div>
+        <div class="amenity-tag"><i class="fas fa-wind"></i> Ventilador</div>
+      </div>
+      <div class="listing-footer">
+        <div class="price-box">
+          <div class="price-from">A partir de</div>
+          <div class="price-value"><sup>R$</sup>450<span style="font-size:1rem;">,00</span></div>
+          <div class="price-period">por noite · 4 pessoas</div>
+          <div class="price-note"><i class="fas fa-coffee"></i> Café da manhã incluso</div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <button class="btn-details" onclick="openRoom('quadruplo')"><i class="fas fa-eye"></i> Ver detalhes</button>
+          <a href="https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Quarto+Qu%C3%A1druplo." target="_blank" class="btn-reserve"><i class="fab fa-whatsapp"></i> Reservar agora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quarto Família -->
+  <div class="listing-card" data-type="quarto">
+    <div class="listing-img-wrap">
+      <img src="imag/quarto_familia.jpg" alt="Quarto Família Pousada das Cores" loading="lazy" />
+      <div class="listing-badge">
+        <span class="badge-pill pill-green"><i class="fas fa-home"></i> Casa Individual</span>
+      </div>
+    </div>
+    <div class="listing-info">
+      <div class="listing-top">
+        <h2 class="listing-name">Quarto Família — Casa Individual</h2>
+        <div class="listing-rating">
+          <div class="stars">★★★★★</div>
+          <span class="score">9,5</span>
+          <span class="reviews">(31)</span>
+        </div>
+      </div>
+      <div class="listing-meta">
+        <div class="meta-item"><i class="fas fa-users"></i> Até 5 pessoas</div>
+        <div class="meta-item"><i class="fas fa-door-open"></i> 2 quartos</div>
+        <div class="meta-item"><i class="fas fa-couch"></i> Sala + sofá-cama</div>
+        <div class="meta-item"><i class="fas fa-bath"></i> 1 banheiro</div>
+      </div>
+      <p class="listing-desc" id="desc-familia">
+        Casa Individual da Pousada — uma opção ideal para quem busca mais espaço e privacidade. Com 2 quartos, sala, cozinha completa equipada com itens de apoio, 1 banheiro e sofá-cama. Perfeita para famílias que querem conforto, liberdade e praticidade durante a estadia em Cocais.
+      </p>
+      <button class="read-more" onclick="toggleDesc('desc-familia',this)">Ler mais</button>
+      <div class="amenities-row">
+        <div class="amenity-tag"><i class="fas fa-wifi"></i> Wi-Fi</div>
+        <div class="amenity-tag"><i class="fas fa-swimming-pool"></i> Piscina</div>
+        <div class="amenity-tag"><i class="fas fa-utensils"></i> Cozinha completa</div>
+        <div class="amenity-tag"><i class="fas fa-coffee"></i> Café da manhã</div>
+        <div class="amenity-tag"><i class="fas fa-couch"></i> Sofá-cama</div>
+        <div class="amenity-tag"><i class="fas fa-lock"></i> Privacidade total</div>
+      </div>
+      <div class="listing-footer">
+        <div class="price-box">
+          <div class="price-from">A partir de</div>
+          <div class="price-value"><sup>R$</sup>525<span style="font-size:1rem;">,00</span></div>
+          <div class="price-period">por noite · até 5 pessoas</div>
+          <div class="price-note"><i class="fas fa-coffee"></i> Café da manhã incluso</div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <button class="btn-details" onclick="openRoom('familia')"><i class="fas fa-eye"></i> Ver detalhes</button>
+          <a href="https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Quarto+Fam%C3%ADlia." target="_blank" class="btn-reserve"><i class="fab fa-whatsapp"></i> Reservar agora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────── EVENTOS ─────────── -->
+  <div class="divider-section" data-type="evento">
+    <hr /><h3><i class="fas fa-building" style="color:#1976D2;margin-right:8px;"></i>Espaço para Eventos</h3><hr />
+  </div>
+
+  <!-- Auditório -->
+  <div class="listing-card event-card" data-type="evento">
+    <div class="listing-img-wrap">
+      <img src="imag/auditorio.jpg" alt="Auditório Pousada das Cores" loading="lazy" />
+      <div class="listing-badge">
+        <span class="badge-pill pill-blue"><i class="fas fa-microphone"></i> Eventos & Corporativo</span>
+        <span class="badge-pill pill-glass"><i class="fas fa-users"></i> Até 50 pessoas</span>
+      </div>
+    </div>
+    <div class="listing-info">
+      <div class="listing-top">
+        <h2 class="listing-name">Auditório & Sala de Eventos</h2>
+        <div class="listing-rating">
+          <div class="stars">★★★★★</div>
+          <span class="score">9,6</span>
+          <span class="reviews">(18)</span>
+        </div>
+      </div>
+      <div class="listing-meta">
+        <div class="meta-item"><i class="fas fa-users"></i> Até 50 pessoas</div>
+        <div class="meta-item"><i class="fas fa-bath"></i> 2 banheiros</div>
+        <div class="meta-item"><i class="fas fa-building"></i> 2º andar</div>
+        <div class="meta-item"><i class="fas fa-calendar-day"></i> Reserva por dia</div>
+      </div>
+      <p class="listing-desc" id="desc-audit">
+        Espaço preparado para receber até 50 pessoas, ideal para reuniões, palestras, treinamentos, cursos e eventos corporativos. Conta com internet dedicada de alta velocidade, sistema de som completo, projetor de vídeo e microfone — estrutura completa para tornar seu evento um sucesso em um ambiente tranquilo e acolhedor.
+      </p>
+      <button class="read-more" onclick="toggleDesc('desc-audit',this)">Ler mais</button>
+      <div class="amenities-row">
+        <div class="amenity-tag"><i class="fas fa-wifi"></i> Wi-Fi</div>
+        <div class="amenity-tag"><i class="fas fa-server"></i> Internet dedicada</div>
+        <div class="amenity-tag"><i class="fas fa-projector-screen"></i> Projetor</div>
+        <div class="amenity-tag"><i class="fas fa-volume-up"></i> Sistema de som</div>
+        <div class="amenity-tag"><i class="fas fa-microphone"></i> Microfone</div>
+        <div class="amenity-tag"><i class="fas fa-bath"></i> 2 banheiros</div>
+        <div class="amenity-tag"><i class="fas fa-utensils"></i> Coffee break sob consulta</div>
+      </div>
+      <div class="listing-footer">
+        <div class="price-box">
+          <div class="price-from">A partir de</div>
+          <div class="price-value"><sup>R$</sup>700<span style="font-size:1rem;">,00</span></div>
+          <div class="price-period">por dia · até 50 pessoas</div>
+          <div class="price-note"><i class="fas fa-headset"></i> Solicite orçamento personalizado</div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <button class="btn-details" onclick="openRoom('auditorio')"><i class="fas fa-eye"></i> Ver detalhes</button>
+          <a href="https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+solicitar+um+or%C3%A7amento+para+o+Audit%C3%B3rio." target="_blank" class="btn-reserve"><i class="fab fa-whatsapp"></i> Solicitar orçamento</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA BOTTOM ── -->
+  <div class="cta-section">
+    <h2>Pronto para reservar?</h2>
+    <p>Fale diretamente conosco pelo WhatsApp — resposta rápida, confirmação imediata e melhor preço garantido.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+fazer+uma+reserva+na+Pousada+das+Cores." target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+      </a>
+      <a href="index.html#contato" class="btn-outline">
+        <i class="fas fa-paper-plane"></i> Enviar formulário
+      </a>
+    </div>
+  </div>
+
+</div><!-- /listings-wrap -->
+
+<!-- ── WA FLOAT ── -->
+<div class="wa-float">
+  <a href="https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+fazer+uma+reserva+na+Pousada+das+Cores." target="_blank" aria-label="Falar pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<!-- ═══════════ MODAL ═══════════ -->
+<div class="modal-overlay" id="roomModal" onclick="handleOverlayClick(event)">
+  <div class="room-modal" id="roomModalBox">
+    <div class="modal-header">
+      <div class="modal-header-title" id="modalTitle">Carregando...</div>
+      <button class="modal-close-btn" onclick="closeRoom()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="modal-body">
+      <!-- Galeria -->
+      <div class="modal-gallery" id="modalGallery">
+        <div class="gallery-slides" id="gallerySlides"></div>
+        <button class="gallery-btn prev" onclick="gSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="gallery-btn next" onclick="gSlide(1)"><i class="fas fa-chevron-right"></i></button>
+        <div class="gallery-dots" id="galleryDots"></div>
+        <div class="gallery-counter" id="galleryCounter">1 / 1</div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="modal-tabs">
+        <button class="modal-tab active" data-tab="sobre"       onclick="switchTab(this)">Sobre</button>
+        <button class="modal-tab"        data-tab="comodidades" onclick="switchTab(this)">Comodidades</button>
+        <button class="modal-tab"        data-tab="politicas"   onclick="switchTab(this)">Políticas</button>
+      </div>
+
+      <div class="modal-tab-panel active" id="panel-sobre"></div>
+      <div class="modal-tab-panel"        id="panel-comodidades"></div>
+      <div class="modal-tab-panel"        id="panel-politicas"></div>
+    </div>
+
+    <div class="modal-footer">
+      <div class="mf-price">
+        <div class="mf-from">A partir de</div>
+        <div class="mf-val" id="modalPrice">—</div>
+        <div class="mf-period" id="modalPeriod">por noite</div>
+      </div>
+      <a class="btn-wa-modal" id="modalWaBtn" href="#" target="_blank">
+        <i class="fab fa-whatsapp"></i> <span id="modalWaLabel">Reservar pelo WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ─── DADOS DAS ACOMODAÇÕES ─── */
+  const ROOMS = {
+    dayuse: {
+      name: 'Day Use — Pousada das Cores',
+      rating: 9.4, reviews: 187,
+      images: ['imag/foto_piscina.png','imag/saladejogos.jpeg','imag/pousadaimagem.jpeg','imag/PousadaPrimeira.png'],
+      preco: 'R$ 49,00', periodo: 'por pessoa · sem alimentação',
+      wa: 'https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Day+Use.',
+      waLabel: 'Reservar Day Use',
+      sobre: `
+        <div class="modal-meta-grid">
+          <div class="modal-meta-item"><i class="fas fa-clock"></i><div><div class="m-label">Horário</div><div class="m-val">9h às 16h30</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-users"></i><div><div class="m-label">Capacidade</div><div class="m-val">Até 100 pessoas</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-calendar-day"></i><div><div class="m-label">Reserva</div><div class="m-val">Antecipada</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-phone"></i><div><div class="m-label">Contato</div><div class="m-val">(31) 97215-1140</div></div></div>
+        </div>
+        <div class="modal-section-title">Opções de Day Use</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
+          <div class="price-option" style="flex:1;min-width:160px;padding:14px;border:1.5px solid #E8EDF2;border-radius:12px;">
+            <div style="font-size:.72rem;font-weight:700;color:#777;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;">Sem alimentação</div>
+            <div style="font-size:1.4rem;font-weight:800;font-family:'Cormorant Garamond',serif;">R$ 49,00</div>
+            <div style="font-size:.78rem;color:#777;margin-top:3px;">Por pessoa</div>
+          </div>
+          <div class="price-option" style="flex:1;min-width:160px;padding:14px;border:2px solid #2E7D32;border-radius:12px;background:rgba(46,125,50,0.04);">
+            <div style="font-size:.72rem;font-weight:700;color:#2E7D32;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;">⭐ Com alimentação</div>
+            <div style="font-size:1.4rem;font-weight:800;font-family:'Cormorant Garamond',serif;">R$ 98,00</div>
+            <div style="font-size:.78rem;color:#777;margin-top:3px;">Almoço + café da tarde</div>
+          </div>
+        </div>
+        <div class="modal-section-title">O que está incluído</div>
+        <div class="modal-includes">
+          <span class="incl-tag"><i class="fas fa-swimming-pool"></i> Piscina adulto e infantil</span>
+          <span class="incl-tag"><i class="fas fa-gamepad"></i> Área de jogos completa</span>
+          <span class="incl-tag"><i class="fas fa-hiking"></i> Trilhas internas</span>
+          <span class="incl-tag"><i class="fas fa-tractor"></i> Visita à fazenda</span>
+          <span class="incl-tag"><i class="fas fa-wifi"></i> Wi-Fi</span>
+        </div>
+        <div class="modal-section-title">Descrição</div>
+        <div class="modal-desc">
+          <p>Venha aproveitar um dia especial em meio à natureza, com lazer, descanso e boa comida. A Pousada das Cores oferece uma estrutura completa para o seu Day Use.</p>
+          <p>🍽 <strong>Almoço self service:</strong> servido das 11h30 às 13h30, com buffet de acompanhamentos e 1 opção de carne.</p>
+          <p>🐎 <strong>Passeio a cavalo</strong> disponível como opção adicional.</p>
+          <p>⚠ <strong>Os quartos não são incluídos no Day Use.</strong> Vagas limitadas — agendamento prévio obrigatório.</p>
+          <p>🔜 <strong>Em breve:</strong> pesque e pague e piscina natural.</p>
+        </div>`,
+      comodidades: [
+        {icon:'fa-swimming-pool', name:'Piscina Adulto', desc:'Área de lazer com piscina'},
+        {icon:'fa-child', name:'Piscina Infantil', desc:'Segura para crianças'},
+        {icon:'fa-gamepad', name:'Área de Jogos', desc:'Sinuca, totó e baralho'},
+        {icon:'fa-wifi', name:'Wi-Fi gratuito', desc:'Internet sem fio'},
+        {icon:'fa-hiking', name:'Trilhas internas', desc:'Mata nativa da pousada'},
+        {icon:'fa-tractor', name:'Área de Fazenda', desc:'Visita guiada'},
+        {icon:'fa-horse', name:'Passeio a Cavalo', desc:'Opcional · consultar valor'},
+        {icon:'fa-utensils', name:'Almoço (opcional)', desc:'Self service · 11h30-13h30'},
+        {icon:'fa-parking', name:'Estacionamento', desc:'Área externa gratuita'},
+      ],
+      politicas: [
+        {icon:'fa-clock','cls':'blue', title:'Horário de funcionamento', body:'Entrada: 9h00 · Saída: 16h30<br>Não é permitido permanecer após o horário de encerramento.'},
+        {icon:'fa-calendar-check','cls':'green', title:'Agendamento', body:'Reserva antecipada obrigatória. Entre em contato pelo WhatsApp: (31) 97215-1140.'},
+        {icon:'fa-door-closed','cls':'red', title:'Quartos', body:'O uso de quartos não está incluso no Day Use. O acesso é exclusivo às áreas comuns.'},
+        {icon:'fa-ban','cls':'orange', title:'Cancelamento', body:'Cancelamentos devem ser informados com no mínimo 24h de antecedência. Vagas são limitadas.'},
+      ]
+    },
+    solteiro: {
+      name: 'Quarto Solteiro',
+      rating: 9.1, reviews: 64,
+      images: ['imag/quarto_solteiro_real.jpeg','imag/foto_piscina.png','imag/saladejogos.jpeg','imag/pousadaimagem.jpeg','imag/PousadaPrimeira.png'],
+      preco: 'R$ 215,00', periodo: 'por noite · 1 pessoa',
+      wa: 'https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Quarto+Solteiro.',
+      waLabel: 'Reservar agora',
+      sobre: `
+        <div class="modal-meta-grid">
+          <div class="modal-meta-item"><i class="fas fa-user"></i><div><div class="m-label">Capacidade</div><div class="m-val">1 pessoa</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-bed"></i><div><div class="m-label">Cama</div><div class="m-val">1 solteiro</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-bath"></i><div><div class="m-label">Banheiro</div><div class="m-val">Privativo</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-building"></i><div><div class="m-label">Andar</div><div class="m-val">1º andar</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-clock"></i><div><div class="m-label">Check-in</div><div class="m-val">A partir 14h</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-sign-out-alt"></i><div><div class="m-label">Check-out</div><div class="m-val">Até 11h</div></div></div>
+        </div>
+        <div class="modal-section-title">Incluído na diária</div>
+        <div class="modal-includes">
+          <span class="incl-tag"><i class="fas fa-coffee"></i> Café da manhã completo</span>
+          <span class="incl-tag"><i class="fas fa-swimming-pool"></i> Acesso à piscina</span>
+          <span class="incl-tag"><i class="fas fa-wifi"></i> Wi-Fi gratuito</span>
+          <span class="incl-tag"><i class="fas fa-parking"></i> Estacionamento</span>
+        </div>
+        <div class="modal-section-title">Sobre o quarto</div>
+        <div class="modal-desc">
+          <p>Acomodação confortável e funcional, ideal para 1 pessoa que busca tranquilidade e conforto em meio à natureza de Cocais.</p>
+          <p>O quarto dispõe de <strong>banheiro privativo</strong>, Wi-Fi, ventilador potente e silencioso, além de <strong>vista para o jardim</strong> da pousada.</p>
+          <p>A pousada também oferece <strong>cozinha compartilhada</strong> com geladeira e demais itens de apoio — toda a praticidade que você precisa durante a estadia.</p>
+          <p>🌿 Café da manhã mineiro completo servido diariamente com pão de queijo, tapioca, frios, frutas e quitandas.</p>
+        </div>`,
+      comodidades: [
+        {icon:'fa-wifi', name:'Wi-Fi gratuito', desc:'Alta velocidade'},
+        {icon:'fa-swimming-pool', name:'Piscina', desc:'Adulto e infantil'},
+        {icon:'fa-coffee', name:'Café da manhã', desc:'Incluso · culinária mineira'},
+        {icon:'fa-wind', name:'Ventilador', desc:'Potente e silencioso'},
+        {icon:'fa-bath', name:'Banheiro privativo', desc:'Exclusivo do quarto'},
+        {icon:'fa-seedling', name:'Vista para o jardim', desc:'Ambiente natural'},
+        {icon:'fa-utensils', name:'Cozinha compartilhada', desc:'Geladeira e utensílios'},
+        {icon:'fa-parking', name:'Estacionamento', desc:'Gratuito'},
+        {icon:'fa-hiking', name:'Trilhas internas', desc:'Acesso livre'},
+        {icon:'fa-gamepad', name:'Salão de jogos', desc:'Sinuca, totó e mais'},
+      ],
+      politicas: [
+        {icon:'fa-clock','cls':'blue', title:'Check-in', body:'A partir das 14h00. Chegada antecipada sujeita a disponibilidade — consulte-nos.'},
+        {icon:'fa-sign-out-alt','cls':'orange', title:'Check-out', body:'Até as 11h00. Saída tardia sujeita a cobrança adicional — consulte disponibilidade.'},
+        {icon:'fa-coffee','cls':'green', title:'Café da manhã', body:'Servido diariamente no restaurante da pousada. Horário informado no check-in.'},
+        {icon:'fa-ban','cls':'red', title:'Cancelamento', body:'Informe cancelamentos com antecedência pelo WhatsApp. Condições conforme período e disponibilidade.'},
+      ]
+    },
+    casal: {
+      name: 'Quarto Casal / Duplo',
+      rating: 9.3, reviews: 128,
+      images: ['imag/quartoduplo.jpeg','imag/foto_piscina.png','imag/saladejogos.jpeg','imag/pousadaimagem.jpeg','imag/PousadaPrimeira.png'],
+      preco: 'R$ 289,00', periodo: 'por noite · 2 pessoas',
+      wa: 'https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Quarto+Casal.',
+      waLabel: 'Reservar agora',
+      sobre: `
+        <div class="modal-meta-grid">
+          <div class="modal-meta-item"><i class="fas fa-users"></i><div><div class="m-label">Capacidade</div><div class="m-val">2 pessoas</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-bed"></i><div><div class="m-label">Cama</div><div class="m-val">1 cama casal</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-bath"></i><div><div class="m-label">Banheiro</div><div class="m-val">Privativo</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-building"></i><div><div class="m-label">Andar</div><div class="m-val">1º andar</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-clock"></i><div><div class="m-label">Check-in</div><div class="m-val">A partir 14h</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-sign-out-alt"></i><div><div class="m-label">Check-out</div><div class="m-val">Até 11h</div></div></div>
+        </div>
+        <div class="modal-section-title">Incluído na diária</div>
+        <div class="modal-includes">
+          <span class="incl-tag"><i class="fas fa-coffee"></i> Café da manhã completo</span>
+          <span class="incl-tag"><i class="fas fa-swimming-pool"></i> Acesso à piscina</span>
+          <span class="incl-tag"><i class="fas fa-wifi"></i> Wi-Fi gratuito</span>
+          <span class="incl-tag"><i class="fas fa-parking"></i> Estacionamento</span>
+        </div>
+        <div class="modal-section-title">Sobre o quarto</div>
+        <div class="modal-desc">
+          <p>O Quarto Casal é a escolha perfeita para casais que buscam conforto, privacidade e contato com a natureza em Cocais.</p>
+          <p>Conta com <strong>cama de casal confortável</strong>, banheiro privativo, Wi-Fi, ventilador potente e silencioso e <strong>vista para o jardim</strong>.</p>
+          <p>Ideal para luna de mel, aniversários ou simplesmente um escape do dia a dia. A pousada oferece cozinha compartilhada com geladeira e utensílios de apoio.</p>
+          <p>🌿 Café da manhã mineiro incluso com pão de queijo, tapioca, frios, frutas, bolos e quitandas.</p>
+        </div>`,
+      comodidades: [
+        {icon:'fa-wifi', name:'Wi-Fi gratuito', desc:'Alta velocidade'},
+        {icon:'fa-swimming-pool', name:'Piscina', desc:'Adulto e infantil'},
+        {icon:'fa-coffee', name:'Café da manhã', desc:'Incluso · culinária mineira'},
+        {icon:'fa-wind', name:'Ventilador', desc:'Potente e silencioso'},
+        {icon:'fa-bath', name:'Banheiro privativo', desc:'Exclusivo do quarto'},
+        {icon:'fa-seedling', name:'Vista para o jardim', desc:'Ambiente natural'},
+        {icon:'fa-utensils', name:'Cozinha compartilhada', desc:'Geladeira e utensílios'},
+        {icon:'fa-parking', name:'Estacionamento', desc:'Gratuito'},
+        {icon:'fa-fish', name:'Pesque e Pague', desc:'Área de lazer'},
+        {icon:'fa-gamepad', name:'Salão de jogos', desc:'Sinuca, totó e mais'},
+      ],
+      politicas: [
+        {icon:'fa-clock','cls':'blue', title:'Check-in', body:'A partir das 14h00. Chegada antecipada sujeita a disponibilidade.'},
+        {icon:'fa-sign-out-alt','cls':'orange', title:'Check-out', body:'Até as 11h00. Saída tardia sujeita a cobrança adicional.'},
+        {icon:'fa-coffee','cls':'green', title:'Café da manhã', body:'Incluso. Servido diariamente no restaurante da pousada.'},
+        {icon:'fa-ban','cls':'red', title:'Cancelamento', body:'Informe cancelamentos com antecedência pelo WhatsApp.'},
+      ]
+    },
+    triplo: {
+      name: 'Quarto Triplo',
+      rating: 9.0, reviews: 52,
+      images: ['imag/quartotriplo.jpeg','imag/quartotriplo2.jpeg','imag/foto_piscina.png','imag/saladejogos.jpeg','imag/pousadaimagem.jpeg'],
+      preco: 'R$ 315,00', periodo: 'por noite · até 3 pessoas',
+      wa: 'https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Quarto+Triplo.',
+      waLabel: 'Reservar agora',
+      sobre: `
+        <div class="modal-meta-grid">
+          <div class="modal-meta-item"><i class="fas fa-users"></i><div><div class="m-label">Capacidade</div><div class="m-val">Até 3 pessoas</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-bed"></i><div><div class="m-label">Camas</div><div class="m-val">1 casal + 1 solteiro</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-bath"></i><div><div class="m-label">Banheiro</div><div class="m-val">Privativo</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-building"></i><div><div class="m-label">Andar</div><div class="m-val">1º andar</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-clock"></i><div><div class="m-label">Check-in</div><div class="m-val">A partir 14h</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-sign-out-alt"></i><div><div class="m-label">Check-out</div><div class="m-val">Até 11h</div></div></div>
+        </div>
+        <div class="modal-section-title">Incluído na diária</div>
+        <div class="modal-includes">
+          <span class="incl-tag"><i class="fas fa-coffee"></i> Café da manhã completo</span>
+          <span class="incl-tag"><i class="fas fa-swimming-pool"></i> Acesso à piscina</span>
+          <span class="incl-tag"><i class="fas fa-wifi"></i> Wi-Fi gratuito</span>
+          <span class="incl-tag"><i class="fas fa-parking"></i> Estacionamento</span>
+        </div>
+        <div class="modal-section-title">Sobre o quarto</div>
+        <div class="modal-desc">
+          <p>O Quarto Triplo acomoda até 3 pessoas com conforto, ideal para famílias pequenas ou grupo de amigos que querem aproveitar Cocais juntos.</p>
+          <p>Dispõe de <strong>1 cama de casal + 1 cama de solteiro</strong>, banheiro privativo, Wi-Fi, ventilador potente e silencioso e vista para o jardim.</p>
+          <p>Acesso completo à piscina, trilhas, salão de jogos e todo o lazer da pousada. Cozinha compartilhada disponível com geladeira e utensílios.</p>
+          <p>🌿 Café da manhã mineiro incluso para todos os hóspedes.</p>
+        </div>`,
+      comodidades: [
+        {icon:'fa-wifi', name:'Wi-Fi gratuito', desc:'Alta velocidade'},
+        {icon:'fa-swimming-pool', name:'Piscina', desc:'Adulto e infantil'},
+        {icon:'fa-coffee', name:'Café da manhã', desc:'Incluso para todos'},
+        {icon:'fa-wind', name:'Ventilador', desc:'Potente e silencioso'},
+        {icon:'fa-bath', name:'Banheiro privativo', desc:'Exclusivo do quarto'},
+        {icon:'fa-seedling', name:'Vista para o jardim', desc:'Ambiente natural'},
+        {icon:'fa-utensils', name:'Cozinha compartilhada', desc:'Geladeira e utensílios'},
+        {icon:'fa-parking', name:'Estacionamento', desc:'Gratuito'},
+        {icon:'fa-hiking', name:'Trilhas internas', desc:'Acesso livre'},
+        {icon:'fa-gamepad', name:'Salão de jogos', desc:'Sinuca, totó e mais'},
+      ],
+      politicas: [
+        {icon:'fa-clock','cls':'blue', title:'Check-in', body:'A partir das 14h00.'},
+        {icon:'fa-sign-out-alt','cls':'orange', title:'Check-out', body:'Até as 11h00.'},
+        {icon:'fa-coffee','cls':'green', title:'Café da manhã', body:'Incluso para todos os hóspedes do quarto.'},
+        {icon:'fa-ban','cls':'red', title:'Cancelamento', body:'Informe com antecedência pelo WhatsApp.'},
+      ]
+    },
+    quadruplo: {
+      name: 'Quarto Quádruplo',
+      rating: 9.2, reviews: 43,
+      images: ['imag/quartoquadruplo.jpeg','imag/foto_piscina.png','imag/saladejogos.jpeg','imag/pousadaimagem.jpeg','imag/PousadaPrimeira.png'],
+      preco: 'R$ 450,00', periodo: 'por noite · 4 pessoas',
+      wa: 'https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Quarto+Qu%C3%A1druplo.',
+      waLabel: 'Reservar agora',
+      sobre: `
+        <div class="modal-meta-grid">
+          <div class="modal-meta-item"><i class="fas fa-users"></i><div><div class="m-label">Capacidade</div><div class="m-val">4 pessoas</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-bed"></i><div><div class="m-label">Camas</div><div class="m-val">1 casal + 2 solteiros</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-bath"></i><div><div class="m-label">Banheiro</div><div class="m-val">Privativo</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-snowflake"></i><div><div class="m-label">Frigobar</div><div class="m-val">Incluso</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-clock"></i><div><div class="m-label">Check-in</div><div class="m-val">A partir 14h</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-sign-out-alt"></i><div><div class="m-label">Check-out</div><div class="m-val">Até 11h</div></div></div>
+        </div>
+        <div class="modal-section-title">Incluído na diária</div>
+        <div class="modal-includes">
+          <span class="incl-tag"><i class="fas fa-coffee"></i> Café da manhã completo</span>
+          <span class="incl-tag"><i class="fas fa-swimming-pool"></i> Acesso à piscina</span>
+          <span class="incl-tag"><i class="fas fa-wifi"></i> Wi-Fi gratuito</span>
+          <span class="incl-tag"><i class="fas fa-snowflake"></i> Frigobar</span>
+          <span class="incl-tag"><i class="fas fa-parking"></i> Estacionamento</span>
+        </div>
+        <div class="modal-section-title">Sobre o quarto</div>
+        <div class="modal-desc">
+          <p>O Quarto Quádruplo é ideal para famílias ou pequenos grupos que valorizam espaço, conforto e praticidade.</p>
+          <p>Com <strong>1 cama de casal e 2 camas de solteiro</strong>, banheiro privativo, <strong>frigobar</strong>, Wi-Fi, ventilador e vista para o jardim.</p>
+          <p>Acesso completo a toda infraestrutura da pousada: piscina adulto e infantil, trilhas, salão de jogos, pesque e pague e passeio a cavalo.</p>
+          <p>🌿 Café da manhã mineiro incluso para todos os hóspedes do quarto.</p>
+        </div>`,
+      comodidades: [
+        {icon:'fa-wifi', name:'Wi-Fi gratuito', desc:'Alta velocidade'},
+        {icon:'fa-swimming-pool', name:'Piscina', desc:'Adulto e infantil'},
+        {icon:'fa-coffee', name:'Café da manhã', desc:'Incluso para todos'},
+        {icon:'fa-snowflake', name:'Frigobar', desc:'No quarto'},
+        {icon:'fa-wind', name:'Ventilador', desc:'Potente e silencioso'},
+        {icon:'fa-bath', name:'Banheiro privativo', desc:'Exclusivo do quarto'},
+        {icon:'fa-seedling', name:'Vista para o jardim', desc:'Ambiente natural'},
+        {icon:'fa-utensils', name:'Cozinha compartilhada', desc:'Geladeira e utensílios'},
+        {icon:'fa-fish', name:'Pesque e Pague', desc:'Área de lazer'},
+        {icon:'fa-parking', name:'Estacionamento', desc:'Gratuito'},
+      ],
+      politicas: [
+        {icon:'fa-clock','cls':'blue', title:'Check-in', body:'A partir das 14h00.'},
+        {icon:'fa-sign-out-alt','cls':'orange', title:'Check-out', body:'Até as 11h00.'},
+        {icon:'fa-coffee','cls':'green', title:'Café da manhã', body:'Incluso para todos os hóspedes.'},
+        {icon:'fa-ban','cls':'red', title:'Cancelamento', body:'Informe com antecedência pelo WhatsApp.'},
+      ]
+    },
+    familia: {
+      name: 'Quarto Família — Casa Individual',
+      rating: 9.5, reviews: 31,
+      images: ['imag/quartofamilia.jpeg','imag/foto_piscina.png','imag/saladejogos.jpeg','imag/pousadaimagem.jpeg','imag/PousadaPrimeira.png'],
+      preco: 'R$ 525,00', periodo: 'por noite · até 5 pessoas',
+      wa: 'https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+reservar+o+Quarto+Fam%C3%ADlia.',
+      waLabel: 'Reservar agora',
+      sobre: `
+        <div class="modal-meta-grid">
+          <div class="modal-meta-item"><i class="fas fa-users"></i><div><div class="m-label">Capacidade</div><div class="m-val">Até 5 pessoas</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-door-open"></i><div><div class="m-label">Quartos</div><div class="m-val">2 quartos</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-couch"></i><div><div class="m-label">Sala</div><div class="m-val">Com sofá-cama</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-bath"></i><div><div class="m-label">Banheiro</div><div class="m-val">1 banheiro</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-utensils"></i><div><div class="m-label">Cozinha</div><div class="m-val">Completa</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-home"></i><div><div class="m-label">Tipo</div><div class="m-val">Casa individual</div></div></div>
+        </div>
+        <div class="modal-section-title">Incluído na diária</div>
+        <div class="modal-includes">
+          <span class="incl-tag"><i class="fas fa-coffee"></i> Café da manhã completo</span>
+          <span class="incl-tag"><i class="fas fa-swimming-pool"></i> Acesso à piscina</span>
+          <span class="incl-tag"><i class="fas fa-wifi"></i> Wi-Fi gratuito</span>
+          <span class="incl-tag"><i class="fas fa-utensils"></i> Cozinha completa</span>
+          <span class="incl-tag"><i class="fas fa-parking"></i> Estacionamento</span>
+        </div>
+        <div class="modal-section-title">Sobre a acomodação</div>
+        <div class="modal-desc">
+          <p>A <strong>Casa Individual da Pousada</strong> é a opção ideal para famílias que buscam mais espaço, privacidade e o conforto de lar.</p>
+          <p>Dispõe de <strong>2 quartos</strong>, sala com sofá-cama, <strong>cozinha completa</strong> equipada com itens de apoio, 1 banheiro e Wi-Fi.</p>
+          <p>Com capacidade para até 5 pessoas, é perfeita para famílias com crianças ou grupos de amigos que querem reunir todos em um único espaço com privacidade total.</p>
+          <p>🌿 Café da manhã mineiro incluso. Acesso completo a toda infraestrutura da pousada.</p>
+        </div>`,
+      comodidades: [
+        {icon:'fa-wifi', name:'Wi-Fi gratuito', desc:'Alta velocidade'},
+        {icon:'fa-swimming-pool', name:'Piscina', desc:'Adulto e infantil'},
+        {icon:'fa-coffee', name:'Café da manhã', desc:'Incluso para todos'},
+        {icon:'fa-utensils', name:'Cozinha completa', desc:'Equipada e privativa'},
+        {icon:'fa-couch', name:'Sofá-cama', desc:'Na sala de estar'},
+        {icon:'fa-bath', name:'Banheiro privativo', desc:'Exclusivo'},
+        {icon:'fa-lock', name:'Privacidade total', desc:'Casa independente'},
+        {icon:'fa-parking', name:'Estacionamento', desc:'Gratuito'},
+        {icon:'fa-hiking', name:'Trilhas internas', desc:'Acesso livre'},
+        {icon:'fa-gamepad', name:'Salão de jogos', desc:'Sinuca, totó e mais'},
+      ],
+      politicas: [
+        {icon:'fa-clock','cls':'blue', title:'Check-in', body:'A partir das 14h00.'},
+        {icon:'fa-sign-out-alt','cls':'orange', title:'Check-out', body:'Até as 11h00.'},
+        {icon:'fa-coffee','cls':'green', title:'Café da manhã', body:'Incluso para todos os hóspedes. Servido no restaurante da pousada.'},
+        {icon:'fa-ban','cls':'red', title:'Cancelamento', body:'Informe com antecedência pelo WhatsApp. Valores e condições conforme disponibilidade.'},
+      ]
+    },
+    auditorio: {
+      name: 'Auditório & Sala de Eventos',
+      rating: 9.6, reviews: 18,
+      images: ['imag/auditorio.jpeg','imag/saladeaula.jpeg','imag/pousadaimagem.jpeg','imag/PousadaPrimeira.png'],
+      preco: 'R$ 700,00', periodo: 'por dia · até 50 pessoas',
+      wa: 'https://wa.me/5531972151140?text=Ol%C3%A1%21+Gostaria+de+solicitar+um+or%C3%A7amento+para+o+Audit%C3%B3rio.',
+      waLabel: 'Solicitar orçamento',
+      sobre: `
+        <div class="modal-meta-grid">
+          <div class="modal-meta-item"><i class="fas fa-users"></i><div><div class="m-label">Capacidade</div><div class="m-val">Até 50 pessoas</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-bath"></i><div><div class="m-label">Banheiros</div><div class="m-val">2 banheiros</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-building"></i><div><div class="m-label">Andar</div><div class="m-val">2º andar</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-server"></i><div><div class="m-label">Internet</div><div class="m-val">Dedicada</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-calendar-day"></i><div><div class="m-label">Reserva</div><div class="m-val">Por dia</div></div></div>
+          <div class="modal-meta-item"><i class="fas fa-headset"></i><div><div class="m-label">Suporte</div><div class="m-val">In loco</div></div></div>
+        </div>
+        <div class="modal-section-title">Incluso no espaço</div>
+        <div class="modal-includes">
+          <span class="incl-tag"><i class="fas fa-wifi"></i> Wi-Fi + Internet dedicada</span>
+          <span class="incl-tag"><i class="fas fa-projector-screen"></i> Projetor de vídeo</span>
+          <span class="incl-tag"><i class="fas fa-volume-up"></i> Sistema de som</span>
+          <span class="incl-tag"><i class="fas fa-microphone"></i> Microfone</span>
+          <span class="incl-tag"><i class="fas fa-parking"></i> Estacionamento</span>
+        </div>
+        <div class="modal-section-title">Sobre o espaço</div>
+        <div class="modal-desc">
+          <p>Espaço preparado para receber até <strong>50 pessoas</strong>, ideal para reuniões, palestras, treinamentos, cursos e eventos corporativos.</p>
+          <p>Conta com <strong>internet dedicada de alta velocidade</strong>, sistema de som completo, <strong>projetor de vídeo</strong> e microfone — estrutura completa para seu evento.</p>
+          <p>Localizado no 2º andar da pousada, com 2 banheiros, ambiente climatizado e todo o conforto necessário para o seu evento.</p>
+          <p>☕ Coffee break e refeições disponíveis sob consulta no restaurante da pousada.</p>
+          <p>📞 Entre em contato para orçamento personalizado com pacotes de hospedagem + eventos.</p>
+        </div>`,
+      comodidades: [
+        {icon:'fa-wifi', name:'Wi-Fi gratuito', desc:'Alta velocidade'},
+        {icon:'fa-server', name:'Internet dedicada', desc:'Para eventos e transmissões'},
+        {icon:'fa-projector-screen', name:'Projetor de vídeo', desc:'Full HD'},
+        {icon:'fa-volume-up', name:'Sistema de som', desc:'Caixas e amplificador'},
+        {icon:'fa-microphone', name:'Microfone', desc:'Com e sem fio'},
+        {icon:'fa-bath', name:'2 Banheiros', desc:'No mesmo andar'},
+        {icon:'fa-utensils', name:'Coffee break', desc:'Sob consulta'},
+        {icon:'fa-parking', name:'Estacionamento', desc:'Gratuito'},
+        {icon:'fa-bed', name:'Hospedagem', desc:'Pacotes combinados disponíveis'},
+      ],
+      politicas: [
+        {icon:'fa-calendar-check','cls':'blue', title:'Reserva antecipada', body:'Solicite orçamento e disponibilidade pelo WhatsApp. Confirmação mediante sinal.'},
+        {icon:'fa-clock','cls':'orange', title:'Horário de uso', body:'Combinado no momento da reserva conforme a necessidade do evento.'},
+        {icon:'fa-utensils','cls':'green', title:'Coffee break & refeições', body:'Disponíveis no restaurante da pousada mediante contratação adicional.'},
+        {icon:'fa-ban','cls':'red', title:'Cancelamento', body:'Condições de cancelamento informadas no momento da contratação.'},
+      ]
+    }
+  };
+
+  /* ─── GALERIA STATE ─── */
+  let gIdx = 0, gImgs = [];
+
+  function gSlide(dir) {
+    gIdx = (gIdx + dir + gImgs.length) % gImgs.length;
+    document.getElementById('gallerySlides').style.transform = `translateX(-${gIdx * 100}%)`;
+    document.getElementById('galleryCounter').textContent = `${gIdx+1} / ${gImgs.length}`;
+    document.querySelectorAll('.gallery-dot').forEach((d,i) => d.classList.toggle('active', i === gIdx));
+  }
+
+  /* ─── ABRIR MODAL ─── */
+  function openRoom(key) {
+    const r = ROOMS[key];
+    if (!r) return;
+    gIdx = 0; gImgs = r.images;
+
+    document.getElementById('modalTitle').textContent = r.name;
+    document.getElementById('modalPrice').textContent = r.preco;
+    document.getElementById('modalPeriod').textContent = r.periodo;
+    document.getElementById('modalWaBtn').href = r.wa;
+    document.getElementById('modalWaLabel').textContent = r.waLabel;
+
+    // Galeria
+    const slides = document.getElementById('gallerySlides');
+    const dots   = document.getElementById('galleryDots');
+    slides.style.transform = 'translateX(0)';
+    slides.innerHTML = gImgs.map(s => `<div class="gallery-slide"><img src="${s}" alt="${r.name}" loading="lazy"/></div>`).join('');
+    dots.innerHTML   = gImgs.map((_,i) => `<button class="gallery-dot ${i===0?'active':''}" onclick="gSlide(${i - gIdx})"></button>`).join('');
+    document.getElementById('galleryCounter').textContent = `1 / ${gImgs.length}`;
+
+    // Conteúdo tabs
+    document.getElementById('panel-sobre').innerHTML = r.sobre;
+    document.getElementById('panel-comodidades').innerHTML = buildAmenidades(r.comodidades);
+    document.getElementById('panel-politicas').innerHTML   = buildPoliticas(r.politicas);
+
+    // Reset tab ativa
+    document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.modal-tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelector('.modal-tab[data-tab="sobre"]').classList.add('active');
+    document.getElementById('panel-sobre').classList.add('active');
+
+    document.getElementById('roomModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeRoom() {
+    document.getElementById('roomModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('roomModal')) closeRoom();
+  }
+
+  /* Teclado */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeRoom();
+    if (!document.getElementById('roomModal').classList.contains('open')) return;
+    if (e.key === 'ArrowLeft')  gSlide(-1);
+    if (e.key === 'ArrowRight') gSlide(1);
+  });
+
+  /* ─── BUILDERS ─── */
+  function buildAmenidades(list) {
+    return `<div class="amenities-grid">${list.map(a => `
+      <div class="amenity-row">
+        <i class="fas ${a.icon}"></i>
+        <div><div class="a-name">${a.name}</div><div class="a-desc">${a.desc}</div></div>
+      </div>`).join('')}</div>`;
+  }
+
+  function buildPoliticas(list) {
+    return `<div class="policies-list">${list.map(p => `
+      <div class="policy-item">
+        <div class="policy-icon ${p.cls}"><i class="fas ${p.icon}"></i></div>
+        <div><div class="policy-title">${p.title}</div><div class="policy-body">${p.body}</div></div>
+      </div>`).join('')}</div>`;
+  }
+
+  /* ─── TABS ─── */
+  function switchTab(btn) {
+    document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.modal-tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+  }
+
+  /* ─── FILTER / TOGGLE ─── */
+  function filterCards(btn) {
+    document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.listing-card').forEach(c => {
+      c.style.display = (f === 'all' || c.dataset.type === f) ? '' : 'none';
+    });
+    document.querySelectorAll('.divider-section').forEach(d => {
+      d.style.display = (f === 'all' || d.dataset.type === f) ? '' : 'none';
+    });
+    document.querySelector('.incl-banner').style.display = (f === 'all' || f === 'quarto') ? '' : 'none';
+    document.querySelector('.highlights-grid').style.display = f === 'all' ? '' : 'none';
+  }
+
+  function toggleDesc(id, btn) {
+    const el = document.getElementById(id);
+    const expanded = el.classList.toggle('expanded');
+    btn.textContent = expanded ? 'Ler menos' : 'Ler mais';
+  }
+</script>
+</body>
+</html>

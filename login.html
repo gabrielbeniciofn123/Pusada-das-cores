@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acesso Administrativo | Pousada das Cores</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Nunito', sansss-serif;
+      overflow: hidden;
+    }
+
+    /* ── Fundo: imagem da pousada em tela cheia ── */
+    .bg-photo {
+      position: fixed; inset: 0; z-index: 0;
+      background: url('imag/PousadaPrimeira.png') center center / cover no-repeat;
+    }
+
+    /* Overlay degradê suave para não escurecer demais */
+    .bg-overlay {
+      position: fixed; inset: 0; z-index: 1;
+      background: linear-gradient(
+        120deg,
+        rgba(0, 0, 0, 0.62) 0%,
+        rgba(15, 30, 20, 0.48) 50%,
+        rgba(0, 0, 0, 0.55) 100%
+      );
+    }
+
+    /* Layout em duas colunas no desktop */
+    .page {
+      position: relative; z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+    }
+
+    /* ── Lado esquerdo: branding ── */
+    .branding {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 56px 60px;
+    }
+    .branding-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(76,175,80,0.20);
+      border: 1px solid rgba(76,175,80,0.35);
+      color: #A5D6A7;
+      padding: 6px 16px; border-radius: 50px;
+      font-size: 0.73rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 20px;
+      width: fit-content;
+    }
+    .branding h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+    .branding h1 em { font-style: italic; color: #A5D6A7; }
+    .branding p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.95rem; line-height: 1.7;
+      max-width: 400px; margin-bottom: 36px;
+    }
+    .branding-stats {
+      display: flex; gap: 32px;
+    }
+    .b-stat .num {
+      font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1;
+    }
+    .b-stat .lbl {
+      font-size: 0.72rem; color: rgba(255,255,255,0.50);
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+
+    /* ── Lado direito: formulário ── */
+    .form-panel {
+      width: 460px;
+      min-width: 460px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 48px;
+      background: rgba(8, 18, 28, 0.82);
+      backdrop-filter: blur(32px);
+      -webkit-backdrop-filter: blur(32px);
+      border-left: 1px solid rgba(255,255,255,0.07);
+      box-shadow: -20px 0 80px rgba(0,0,0,0.35);
+    }
+
+    .logo-area {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .logo-area img {
+      width: 72px; height: 72px; object-fit: contain;
+      border-radius: 16px; margin: 0 auto 16px; display: block;
+      border: 2px solid rgba(76,175,80,0.40);
+      box-shadow: 0 4px 20px rgba(76,175,80,0.18);
+    }
+    .logo-area h2 {
+      font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 4px;
+    }
+    .logo-area span {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.38);
+    }
+
+    /* Divider */
+    .form-divider {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 28px;
+    }
+    .form-divider hr { flex: 1; border: none; border-top: 1px solid rgba(255,255,255,0.09); }
+    .form-divider span { font-size: 0.72rem; color: rgba(255,255,255,0.30); white-space: nowrap; }
+
+    /* Campos */
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block; font-size: 0.73rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: rgba(255,255,255,0.50); margin-bottom: 8px;
+    }
+    .inp-wrap { position: relative; }
+    .inp-wrap i.icon {
+      position: absolute; left: 15px; top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.28); font-size: 0.85rem;
+    }
+    .inp-wrap input {
+      width: 100%; padding: 13px 44px 13px 42px;
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(255,255,255,0.10);
+      border-radius: 12px; color: #fff;
+      font-family: 'Nunito', sans-serif; font-size: 0.93rem;
+      transition: all .25s; outline: none;
+    }
+    .inp-wrap input::placeholder { color: rgba(255,255,255,0.20); }
+    .inp-wrap input:focus {
+      border-color: #4CAF50;
+      background: rgba(76,175,80,0.07);
+      box-shadow: 0 0 0 3px rgba(76,175,80,0.13);
+    }
+    .toggle {
+      position: absolute; right: 14px; top: 50%;
+      transform: translateY(-50%); color: rgba(255,255,255,0.28);
+      cursor: pointer; font-size: 0.85rem; transition: color .2s;
+      background: none; border: none; padding: 0;
+    }
+    .toggle:hover { color: rgba(255,255,255,0.65); }
+
+    /* Botão entrar */
+    .btn-enter {
+      width: 100%; padding: 14px;
+      background: linear-gradient(135deg, #2E7D32 0%, #43A047 100%);
+      border: none; border-radius: 12px; color: #fff;
+      font-family: 'Nunito', sans-serif; font-size: 0.97rem; font-weight: 700;
+      cursor: pointer; transition: all .3s; margin-top: 4px;
+      letter-spacing: .3px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 4px 20px rgba(46,125,50,0.35);
+    }
+    .btn-enter:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(76,175,80,0.45);
+    }
+    .btn-enter:active { transform: translateY(0); }
+    .btn-enter .spinner {
+      display: none; width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: #fff; border-radius: 50%;
+      animation: spin .6s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Erro */
+    .error {
+      display: none; margin-top: 14px;
+      background: rgba(239,83,80,0.12);
+      border: 1px solid rgba(239,83,80,0.28);
+      border-radius: 10px; padding: 11px 14px;
+      color: #ef9a9a; font-size: 0.82rem; text-align: center;
+    }
+
+    /* Rodapé do card */
+    .card-footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+    .back-link {
+      color: rgba(255,255,255,0.35); font-size: 0.82rem;
+      text-decoration: none; transition: color .2s;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .back-link:hover { color: rgba(255,255,255,0.70); }
+    .security-tag {
+      display: flex; align-items: center; gap: 6px;
+      color: rgba(255,255,255,0.20); font-size: 0.70rem;
+    }
+    .security-tag i { color: #4CAF50; font-size: 0.70rem; }
+
+    /* ── Mobile: full-screen centered card ── */
+    @media (max-width: 860px) {
+      .branding { display: none; }
+      .form-panel {
+        width: 100%; min-width: unset;
+        padding: 40px 28px;
+        background: rgba(8, 18, 28, 0.78);
+        border-left: none;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      .form-panel > * { max-width: 400px; width: 100%; margin-left: auto; margin-right: auto; }
+      .logo-area, .form-divider, .btn-enter, .error, .card-footer { max-width: 400px; }
+    }
+    @media (max-width: 420px) {
+      .form-panel { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Imagem de fundo da pousada -->
+  <div class="bg-photo"></div>
+  <div class="bg-overlay"></div>
+
+  <div class="page">
+
+    <!-- Branding (desktop esquerdo) -->
+    <div class="branding">
+      <div class="branding-badge"><i class="fas fa-shield-halved"></i> Área Administrativa</div>
+      <h1>Bem-vindo de volta<br>à <em>Pousada das Cores</em></h1>
+      <p>Acesse o painel de gestão para acompanhar reservas, financeiro, hóspedes e muito mais — tudo em um só lugar.</p>
+      <div class="branding-stats">
+        <div class="b-stat"><div class="num">35</div><div class="lbl">Acomodações</div></div>
+        <div class="b-stat"><div class="num">+32</div><div class="lbl">Anos de história</div></div>
+        <div class="b-stat"><div class="num">9,2</div><div class="lbl">Avaliação</div></div>
+      </div>
+    </div>
+
+    <!-- Painel do formulário -->
+    <div class="form-panel">
+
+      <div class="logo-area">
+        <img src="imag/logo.jpg" alt="Logo Pousada das Cores" />
+        <h2>Pousada das Cores</h2>
+        <span>Painel Administrativo</span>
+      </div>
+
+      <div class="form-divider">
+        <hr /><span>Entre com suas credenciais</span><hr />
+      </div>
+
+      <form id="loginForm" onsubmit="doLogin(event)" autocomplete="off">
+        <div class="form-group">
+          <label>Usuário</label>
+          <div class="inp-wrap">
+            <i class="fas fa-user icon"></i>
+            <input type="text" id="user" placeholder="Digite seu usuário" autocomplete="username" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Senha</label>
+          <div class="inp-wrap">
+            <i class="fas fa-lock icon"></i>
+            <input type="password" id="pass" placeholder="Digite sua senha" autocomplete="current-password" required />
+            <button type="button" class="toggle" onclick="togglePass()">
+              <i class="fas fa-eye" id="eyeIco"></i>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-enter" id="btnEnter">
+          <div class="spinner" id="spinner"></div>
+          <i class="fas fa-sign-in-alt" id="btnIcon"></i>
+          <span id="btnText">Acessar Painel</span>
+        </button>
+
+        <div class="error" id="errMsg">
+          <i class="fas fa-exclamation-triangle" style="margin-right:5px;"></i>
+          Usuário ou senha incorretos. Tente novamente.
+        </div>
+      </form>
+
+      <div class="card-footer">
+        <a href="index.html" class="back-link">
+          <i class="fas fa-arrow-left"></i> Voltar ao site da pousada
+        </a>
+        <div class="security-tag">
+          <i class="fas fa-shield-halved"></i>
+          Acesso restrito · Somente administradores
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    if (sessionStorage.getItem('pdc_admin') === '1') location.href = 'dashboard.html';
+
+    function doLogin(e) {
+      e.preventDefault();
+      const u       = document.getElementById('user').value.trim();
+      const p       = document.getElementById('pass').value;
+      const err     = document.getElementById('errMsg');
+      const spinner = document.getElementById('spinner');
+      const icon    = document.getElementById('btnIcon');
+      const txt     = document.getElementById('btnText');
+
+      spinner.style.display = 'block';
+      icon.style.display    = 'none';
+      txt.textContent       = 'Verificando...';
+      err.style.display     = 'none';
+
+      setTimeout(() => {
+        if (u === 'cecpousada' && p === 'Pousada@2026') {
+          sessionStorage.setItem('pdc_admin', '1');
+          sessionStorage.setItem('pdc_user', u);
+          txt.textContent = 'Redirecionando...';
+          setTimeout(() => location.href = 'dashboard.html', 350);
+        } else {
+          spinner.style.display = 'none';
+          icon.style.display    = 'inline';
+          txt.textContent       = 'Acessar Painel';
+          err.style.display     = 'block';
+          document.getElementById('pass').value = '';
+          document.getElementById('pass').focus();
+        }
+      }, 850);
+    }
+
+    function togglePass() {
+      const inp = document.getElementById('pass');
+      const ico = document.getElementById('eyeIco');
+      inp.type      = inp.type === 'password' ? 'text' : 'password';
+      ico.className = inp.type === 'text' ? 'fas fa-eye-slash' : 'fas fa-eye';
+    }
+  </script>
+</body>
+</html>
