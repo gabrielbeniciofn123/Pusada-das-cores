@@ -76,6 +76,11 @@
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+  <!-- Favicon -->
+  <link rel="icon"             type="image/png" href="imag/logotransparente.png" />
+  <link rel="shortcut icon"    type="image/png" href="imag/logotransparente.png" />
+  <link rel="apple-touch-icon"                  href="imag/logotransparente.png" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -86,7 +91,7 @@
 <nav id="navbar">
   <div class="container nav-inner">
     <a href="#" class="nav-logo">
-      <div class="logo-icon"><img src="imag/logo.jpg" alt="Logo Pousada das Cores" /></div>
+      <div class="logo-icon"><img src="imag/logotransparente.png" alt="Logo Pousada das Cores" /></div>
       Pousada das Cores
     </a>
     <div class="nav-links">
@@ -123,7 +128,7 @@
   <a href="#experiencias" class="mobile-link"><i class="fas fa-mountain"        style="width:18px;color:#4CAF50;"></i> Experiências</a>
   <a href="#galeria"      class="mobile-link"><i class="fas fa-images"          style="width:18px;color:#4CAF50;"></i> Galeria</a>
   <a href="#localizacao"  class="mobile-link"><i class="fas fa-map-marker-alt"  style="width:18px;color:#4CAF50;"></i> Localização</a>
-  <a href="reservas.html" class="mobile-link"><i class="fas fa-calendar-check"  style="width:18px;color:#4CAF50;"></i> Reservar</a>
+  <a href="#contato"      class="mobile-link"><i class="fas fa-calendar-check"  style="width:18px;color:#4CAF50;"></i> Reservar</a>
   <div class="mobile-menu-footer">
     <a href="https://wa.me/5531997613764?text=Ol%C3%A1%21+Gostaria+de+fazer+uma+reserva+na+Pousada+das+Cores." target="_blank" class="btn btn-whatsapp">
       <i class="fab fa-whatsapp"></i> Reservar pelo WhatsApp
@@ -139,25 +144,49 @@
      HERO
 ============================== -->
 <section id="hero">
-  <div class="hero-bg"></div>
+
+  <!-- Slideshow de fundo -->
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active" style="background-image:url('imag/PousadaPrimeira.png')"></div>
+    <div class="hero-slide" style="background-image:url('imag/foto_piscina.png')"></div>
+    <div class="hero-slide" style="background-image:url('imag/CAFEDAMANHA.png')"></div>
+    <div class="hero-slide" style="background-image:url('imag/quartoduplo.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imag/auditorio.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imag/IMGNOITE.png')"></div>
+    <div class="hero-slide" style="background-image:url('imag/saladejogos.jpeg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+
   <div class="container">
     <div class="hero-content">
-      <div class="hero-badge"><i class="fas fa-star"></i> Nota 9,2 · Mais de 32 anos de história</div>
+
+      <div class="hero-badge">
+        <i class="fas fa-star"></i> Nota 9,2 &nbsp;·&nbsp; Mais de 32 anos de história
+      </div>
+
       <h1 class="hero-title">
         Seu Refúgio Perfeito na<br>
         <em>Serra do Espinhaço</em>
       </h1>
+
       <p class="hero-subtitle">
         Hospedagem em Cocais, próximo à Serra do Caraça, cachoeiras, trilhas e paisagens inesquecíveis.
         Um lugar para descansar, relaxar e viver a verdadeira experiência da roça mineira.
       </p>
+
       <div class="hero-buttons">
-        <a href="reservas.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Reservar Agora</a>
-        <a href="https://wa.me/5531997613764?text=Ol%C3%A1%21+Gostaria+de+fazer+uma+reserva+na+Pousada+das+Cores." target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
+        <a href="#contato" class="btn btn-primary hero-btn-main">
+          <i class="fas fa-calendar-check"></i> Reservar Agora
+        </a>
+        <a href="https://wa.me/5531997613764?text=Ol%C3%A1%21+Gostaria+de+fazer+uma+reserva+na+Pousada+das+Cores."
+           target="_blank" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+        </a>
       </div>
+
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="num">35</div>
+          <div class="num" data-target="35">35</div>
           <div class="label">Acomodações</div>
         </div>
         <div class="hero-stat">
@@ -173,12 +202,34 @@
           <div class="label">Anos de história</div>
         </div>
       </div>
+
     </div>
   </div>
+
+  <!-- Dots do slideshow -->
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" aria-label="Foto 1"></button>
+    <button class="hero-dot" aria-label="Foto 2"></button>
+    <button class="hero-dot" aria-label="Foto 3"></button>
+    <button class="hero-dot" aria-label="Foto 4"></button>
+    <button class="hero-dot" aria-label="Foto 5"></button>
+    <button class="hero-dot" aria-label="Foto 6"></button>
+    <button class="hero-dot" aria-label="Foto 7"></button>
+  </div>
+
+  <!-- Seta de navegação -->
+  <button class="hero-slide-prev" id="heroSlidePrev" aria-label="Foto anterior">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="hero-slide-next" id="heroSlideNext" aria-label="Próxima foto">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+
   <div class="hero-scroll">
     <span>DESÇA</span>
     <i class="fas fa-chevron-down"></i>
   </div>
+
 </section>
 
 <!-- ==============================
@@ -506,7 +557,7 @@
 
         <div class="exp-card fade-up">
           <div class="exp-img">
-            <img src="imag/fotopiscina.png" alt="Área de Piscina Pousada das Cores" loading="lazy" />
+            <img src="imag/foto_piscina.png" alt="Área de Piscina Pousada das Cores" loading="lazy" onerror="this.src='imag/pousadaimagem.jpeg'" />
           </div>
           <div class="exp-body">
             <div class="exp-dist"><i class="fas fa-map-marker-alt"></i> Na pousada</div>
@@ -624,35 +675,35 @@
     </div>
     <div class="gallery-grid" id="gallery">
       <div class="gallery-item" data-src="imag/PousadaPrimeira.png">
-        <img src="imag/PousadaPrimeira.png" alt="Pousada das Cores - Visão Geral" loading="lazy" />
+        <img src="imag/PousadaPrimeira.png" alt="Pousada das Cores - Visão Geral" loading="lazy" onerror="this.src='imag/pousadaimagem.jpeg'" />
         <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
       </div>
       <div class="gallery-item" data-src="imag/quarto_solteiro_real.jpeg">
-        <img src="imag/quarto_solteiro_real.jpeg" alt="Quartos Pousada das Cores" loading="lazy" />
+        <img src="imag/quarto_solteiro_real.jpeg" alt="Quartos Pousada das Cores" loading="lazy" onerror="this.src='imag/pousadaimagem.jpeg'" />
         <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
       </div>
       <div class="gallery-item" data-src="imag/foto_piscina.png">
-        <img src="imag/fotopiscina.png" alt="Piscina Pousada das Cores" loading="lazy" />
+        <img src="imag/foto_piscina.png" alt="Piscina Pousada das Cores" loading="lazy" onerror="this.src='imag/pousadaimagem.jpeg'" />
         <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
       </div>
       <div class="gallery-item" data-src="imag/pousadaimagem.jpeg">
-        <img src="imag/pousadaimagem.jpeg" alt="Restaurante Pousada das Cores" loading="lazy" />
+        <img src="imag/pousadaimagem.jpeg" alt="Restaurante Pousada das Cores" loading="lazy" onerror="this.src='imag/PousadaPrimeira.png'" />
         <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
       </div>
       <div class="gallery-item" data-src="imag/IMAG.png">
-        <img src="imag/IMAG.png" alt="Trilhas Pousada das Cores" loading="lazy" />
+        <img src="imag/IMAG.png" alt="Trilhas Pousada das Cores" loading="lazy" onerror="this.src='imag/pousadaimagem.jpeg'" />
         <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
       </div>
       <div class="gallery-item" data-src="imag/Jogos.png">
-        <img src="imag/Jogos.png" alt="Sala de Jogos" loading="lazy" />
+        <img src="imag/Jogos.png" alt="Sala de Jogos Pousada das Cores" loading="lazy" onerror="this.src='imag/saladejogos.jpeg'" />
         <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
       </div>
       <div class="gallery-item" data-src="imag/auditorio.jpeg">
-        <img src="imag/auditorio.jpeg" alt="Eventos Pousada das Cores" loading="lazy" />
+        <img src="imag/auditorio.jpeg" alt="Auditório e Eventos Pousada das Cores" loading="lazy" onerror="this.src='imag/pousadaimagem.jpeg'" />
         <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
       </div>
       <div class="gallery-item" data-src="imag/IMGNOITE.png">
-        <img src="imag/IMGNOITE.png" alt="Cachoeiras Cocais MG" loading="lazy" />
+        <img src="imag/IMGNOITE.png" alt="Pousada das Cores à Noite" loading="lazy" onerror="this.src='imag/pousadaimagem.jpeg'" />
         <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
       </div>
     </div>
@@ -660,11 +711,11 @@
 </section>
 
 <!-- Lightbox -->
-<div id="lightbox">
-  <div class="lb-close" id="lbClose"><i class="fas fa-times"></i></div>
-  <div class="lb-nav lb-prev" id="lbPrev"><i class="fas fa-chevron-left"></i></div>
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+  <button class="lb-close" id="lbClose" aria-label="Fechar galeria"><i class="fas fa-times"></i></button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Foto anterior"><i class="fas fa-chevron-left"></i></button>
   <img id="lbImg" src="" alt="Galeria Pousada das Cores" />
-  <div class="lb-nav lb-next" id="lbNext"><i class="fas fa-chevron-right"></i></div>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Próxima foto"><i class="fas fa-chevron-right"></i></button>
 </div>
 
 <!-- ==============================
@@ -860,7 +911,7 @@
           </div>
 
           <div class="rsv-lgpd">
-            <input type="checkbox" id="rsvLgpd" name="lgpd" />
+            <input type="checkbox" id="rsvLgpd" name="lgpd" required />
             <label for="rsvLgpd">
               Concordo com o tratamento dos meus dados pessoais para fins de contato e reserva,
               conforme a <a href="#" onclick="return false;">Política de Privacidade</a> da
@@ -943,7 +994,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="nav-logo">
-          <div class="logo-icon"><img src="imag/logo.jpg" alt="Logo Pousada das Cores" /></div>
+          <div class="logo-icon"><img src="imag/logotransparente.png" alt="Logo Pousada das Cores" /></div>
           Pousada das Cores
         </div>
         <p>Um refúgio de paz e conforto em Cocais, Barão de Cocais – MG. Natureza, cultura mineira e acolhimento desde 1993.</p>
@@ -1004,8 +1055,8 @@
 <!-- ══════════════════════════════
      MODAL SELEÇÃO DE QUARTO
 ══════════════════════════════ -->
-<div class="qmodal-overlay" id="qmodal" onclick="fecharQuarto(event)">
-  <div class="qmodal" id="qmodalBox">
+<div class="qmodal-overlay" id="qmodal" onclick="fecharQuarto(event)" role="presentation">
+  <div class="qmodal" id="qmodalBox" role="dialog" aria-modal="true" aria-labelledby="qmodalNome" onclick="event.stopPropagation()">
 
     <!-- Header: badge + título + fechar -->
     <div class="qmodal-header">
@@ -1013,7 +1064,7 @@
         <span class="qm-badge" id="qmBadge">Quarto</span>
         <h3 id="qmodalNome">Quarto</h3>
       </div>
-      <button class="qmodal-x" onclick="fecharQuarto()"><i class="fas fa-times"></i></button>
+      <button class="qmodal-x" onclick="fecharQuarto()" aria-label="Fechar"><i class="fas fa-times"></i></button>
     </div>
 
     <div class="qmodal-body">
@@ -1287,17 +1338,15 @@
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
   /* ══════════════════════════════════════════
-     FORMULÁRIO DE RESERVA — Formsubmit.co
+     FORMULÁRIO DE RESERVA — Web3Forms
      ────────────────────────────────────────────
-     Funciona sem cadastro. Na primeira vez que
-     alguém enviar o formulário, você receberá
-     um e-mail de confirmação em:
-       lukets152028@gmail.com
-     Clique em "Confirm your submission" e pronto.
-     A partir daí, todas as reservas chegam
-     diretamente na sua caixa de entrada do Gmail.
+     ATIVAÇÃO (30 segundos, sem criar conta):
+     1. Abra  https://web3forms.com
+     2. Digite  contato.gabrielbenicio@gmail.com
+     3. Clique em "Get your Access Key"
+     4. Copie a chave gerada e cole abaixo
   ══════════════════════════════════════════ */
-  const RSV_ENDPOINT = 'https://formsubmit.co/ajax/contato.gabrielbenicio@gmail.com';
+  const W3F_KEY = 'COLE_SUA_CHAVE_AQUI';
 
   /* ---------- Máscara de telefone ---------- */
   function rsvPhoneMask(e) {
@@ -1375,7 +1424,7 @@
       ok = rsvSetErr('rsvCheckin','errCheckin','Selecione a data de entrada.');
     if (!d.checkout)
       ok = rsvSetErr('rsvCheckout','errCheckout','Selecione a data de saída.');
-    if (d.checkin && d.checkout && d.checkout <= d.checkin)
+    if (d.checkin && d.checkout && new Date(d.checkout) <= new Date(d.checkin))
       ok = rsvSetErr('rsvCheckout','errCheckout','A saída deve ser posterior à entrada.');
     if (!d.hospedes)
       ok = rsvSetErr('rsvHospedes','errHospedes','Selecione o número de hóspedes.');
@@ -1420,38 +1469,40 @@
     const nuitesLabel = nights === 1 ? '1 noite' : nights + ' noites';
     const ts = new Date().toLocaleString('pt-BR');
 
-    const payload = {
-      /* Campos internos do Formsubmit */
-      _subject  : 'Nova Reserva — Pousada das Cores | ' + nome,
-      _template : 'table',
-      _captcha  : 'false',
-      _replyto  : email,
+    /* Guarda de segurança: avisa no console se a chave ainda for placeholder */
+    if (!W3F_KEY || W3F_KEY === 'COLE_SUA_CHAVE_AQUI') {
+      rsvSetLoading(false);
+      alert('⚙️ Configure a chave Web3Forms no index.html (W3F_KEY).\nAcesse web3forms.com para gerar a chave gratuita.');
+      return;
+    }
 
-      /* Dados da reserva — aparecerão como tabela no e-mail */
-      'Nome completo'      : nome,
-      'Telefone/WhatsApp'  : telefone,
-      'E-mail'             : email,
-      'Check-in'           : fmtDate(checkin),
-      'Check-out'          : fmtDate(checkout),
-      'Quantidade de noites': nuitesLabel,
-      'Hóspedes'           : hospedes,
-      'Acomodação'         : tipo || 'Não informado',
-      'Observações'        : mensagem || 'Nenhuma observação.',
-      'Enviado em'         : ts,
+    const payload = {
+      access_key  : W3F_KEY,
+      subject     : 'Nova Reserva — Pousada das Cores | ' + nome,
+      from_name   : 'Site Pousada das Cores',
+      replyto     : email,
+      /* campos que chegam no e-mail */
+      'Nome'            : nome,
+      'Telefone'        : telefone,
+      'E-mail'          : email,
+      'Check-in'        : fmtDate(checkin),
+      'Check-out'       : fmtDate(checkout),
+      'Noites'          : nuitesLabel,
+      'Hóspedes'        : hospedes,
+      'Acomodação'      : tipo || 'Não informado',
+      'Observações'     : mensagem || 'Nenhuma observação.',
+      'Enviado em'      : ts,
     };
 
     try {
-      const res  = await fetch(RSV_ENDPOINT, {
+      const res  = await fetch('https://api.web3forms.com/submit', {
         method  : 'POST',
         headers : { 'Content-Type': 'application/json', Accept: 'application/json' },
         body    : JSON.stringify(payload),
       });
-
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-
       const data = await res.json();
-      /* Formsubmit retorna { success: "true" } como string */
-      if (data.success !== 'true' && data.success !== true) {
+
+      if (data.success !== true && data.success !== 'true') {
         throw new Error(data.message || 'Falha no envio');
       }
 
@@ -1501,10 +1552,49 @@
     });
   })();
 
+  /* ---------- Hero Slideshow ---------- */
+  (function () {
+    const slides  = document.querySelectorAll('.hero-slide');
+    const dots    = document.querySelectorAll('.hero-dot');
+    const prevBtn = document.getElementById('heroSlidePrev');
+    const nextBtn = document.getElementById('heroSlideNext');
+    let current = 0;
+    let timer;
+
+    function goTo(idx) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      /* reinicia animação Ken Burns */
+      slides[current].style.animation = 'none';
+      current = (idx + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      /* força reflow para re-disparar keyframe */
+      void slides[current].offsetWidth;
+      slides[current].style.animation = '';
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 5500);
+    }
+
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); startTimer(); }));
+    prevBtn.addEventListener('click', () => { goTo(current - 1); startTimer(); });
+    nextBtn.addEventListener('click', () => { goTo(current + 1); startTimer(); });
+
+    /* Pausa no hover */
+    const hero = document.getElementById('hero');
+    hero.addEventListener('mouseenter', () => clearInterval(timer));
+    hero.addEventListener('mouseleave', startTimer);
+
+    startTimer();
+  })();
+
   /* ---------- Smooth reveal on page load ---------- */
   document.querySelector('.hero-content').style.opacity = '0';
-  document.querySelector('.hero-content').style.transform = 'translateY(20px)';
-  document.querySelector('.hero-content').style.transition = 'opacity 1s ease 0.3s, transform 1s ease 0.3s';
+  document.querySelector('.hero-content').style.transform = 'translateY(24px)';
+  document.querySelector('.hero-content').style.transition = 'opacity 1.1s ease 0.2s, transform 1.1s ease 0.2s';
   window.addEventListener('load', () => {
     document.querySelector('.hero-content').style.opacity = '1';
     document.querySelector('.hero-content').style.transform = 'translateY(0)';
@@ -1692,7 +1782,7 @@
 
   /* ── Fechar modal ── */
   function fecharQuarto(e) {
-    if (e && e.target !== document.getElementById('qmodal')) return;
+    if (e && e.target !== e.currentTarget) return;
     document.getElementById('qmodal').classList.remove('open');
     document.body.style.overflow = '';
   }
