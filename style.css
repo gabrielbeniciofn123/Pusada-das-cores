@@ -246,17 +246,7 @@
       display: flex; flex-direction: column; gap: 10px;
     }
     .mobile-menu-footer .btn { justify-content: center; }
-    .mobile-close {
-      position: absolute; top: 14px; right: 16px;
-      width: 36px; height: 36px;
-      background: rgba(255,255,255,0.10);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.80);
-      cursor: pointer; font-size: 0.92rem;
-      transition: background 0.2s;
-    }
-    .mobile-close:hover { background: rgba(255,255,255,0.20); }
+    .mobile-close { display: none; }
 
     /* Backdrop */
     .menu-backdrop {
@@ -1771,6 +1761,15 @@
       .rsv-form-card { padding: 28px 20px; }
       .rsv-grid-2 { grid-template-columns: 1fr; }
 
+      /* Hero: subtítulo limitado a 2 linhas em tablet/mobile médio */
+      .hero-subtitle {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
       /* Footer */
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; text-align: center; }
@@ -1781,21 +1780,35 @@
       .container { padding: 0 16px; }
       .section { padding: 50px 0; }
 
-      /* Hero */
+      /* Hero mobile — foco em captura de leads */
       .hero-title { font-size: clamp(1.8rem, 7vw, 2.6rem); }
-      .hero-subtitle { font-size: 0.95rem; }
-      .hero-badge { font-size: 0.72rem; padding: 7px 14px; }
-      .hero-buttons { flex-direction: column; align-items: stretch; }
-      .hero-buttons .btn { justify-content: center; width: 100%; }
-      .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
-      .hero-stat .num { font-size: 1.7rem; }
+      .hero-subtitle { display: none; }           /* Remove texto longo — título basta */
+      .hero-badge { font-size: 0.72rem; padding: 7px 14px; margin-bottom: 18px; }
+
+      /* Botões: WhatsApp primeiro (CTA principal de captura) */
+      .hero-buttons { flex-direction: column; align-items: stretch; gap: 10px; margin-bottom: 36px; }
+      .hero-buttons .btn   { justify-content: center; width: 100%; }
+      .hero-btn-main       { order: 2; opacity: 0.92; }
+      .hero-buttons .btn-whatsapp {
+        order: 1;
+        padding: 16px 24px;
+        font-size: 1.02rem;
+        font-weight: 700;
+        box-shadow: 0 6px 28px rgba(37,211,102,0.50);
+      }
+
+      /* Estatísticas: mantém só as 2 mais impactantes (hóspedes + anos) */
+      .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+      .hero-stats .hero-stat:nth-child(1),
+      .hero-stats .hero-stat:nth-child(3) { display: none; } /* oculta acomodações e nota (já está no badge) */
+      .hero-stat .num   { font-size: 1.7rem; }
       .hero-stat .label { font-size: 0.72rem; }
+
       .hero-slide-prev, .hero-slide-next { display: none; }
       .hero-scroll { display: none; }
       .hero-dots { bottom: 20px; }
       .hero-overlay {
-        background:
-          linear-gradient(to bottom, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.62) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.68) 100%);
       }
 
       /* Seções - títulos */
@@ -1848,7 +1861,6 @@
     @media (max-width: 380px) {
       .container { padding: 0 12px; }
       .hero-title { font-size: 1.55rem; }
-      .hero-subtitle { font-size: 0.88rem; }
       .hero-stat .num { font-size: 1.5rem; }
       .hero-stat .label { font-size: 0.65rem; }
       .hero-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -1941,13 +1953,6 @@
       min-height: 44px;
       justify-content: center;
     }
-    .mobile-close {
-      width: 44px;
-      height: 44px;
-      top: 10px;
-      right: 12px;
-    }
-
     /* ── Dispositivos touch: remove hover effects persistentes ── */
     @media (hover: none) and (pointer: coarse) {
       .hero-slide-prev,
