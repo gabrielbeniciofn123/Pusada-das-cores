@@ -1076,6 +1076,7 @@
       display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
     }
     .wa-tooltip {
+      position: relative;
       background: var(--white); color: var(--text-dark);
       padding: 10px 16px; border-radius: 10px;
       font-size: 0.85rem; font-weight: 500;
@@ -1985,3 +1986,4 @@
       .gastro-item   { padding: 12px; }
       .loc-info-item { padding: 12px 14px; }
     }
+

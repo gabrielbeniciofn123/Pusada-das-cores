@@ -35,7 +35,7 @@
     "description": "Pousada aconchegante em Cocais, Barão de Cocais - MG, próxima à Serra do Caraça. Café da manhã incluso, piscina, restaurante e muito mais.",
     "url": "https://www.pousadadascores.com.br",
     "telephone": "+55-31-97215-1140",
-    "email": "contato@pousadadascores.com.br",
+    "email": "reservasdascores@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Rua José de Almeida Matias, 380",
@@ -149,7 +149,7 @@
   <div class="hero-slides" id="heroSlides">
     <div class="hero-slide active" style="background-image:url('imag/PousadaPrimeira.png')"></div>
     <div class="hero-slide" style="background-image:url('imag/foto_piscina.png')"></div>
-    <div class="hero-slide" style="background-image:url('imag/COCAIS.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imag/CAFEDAMANHA.png')"></div>
     <div class="hero-slide" style="background-image:url('imag/quartoduplo.jpeg')"></div>
     <div class="hero-slide" style="background-image:url('imag/auditorio.jpeg')"></div>
     <div class="hero-slide" style="background-image:url('imag/IMGNOITE.png')"></div>
@@ -434,7 +434,7 @@
               <span><i class="fas fa-users"></i> Até 50 pessoas</span>
               <span><i class="fas fa-wifi"></i> Internet dedicada</span>
               <span><i class="fas fa-volume-up"></i> Sistema de som</span>
-              <span><i class="fas fa-projector-screen"></i> Projetor</span>
+              <span><i class="fas fa-tv"></i> Projetor</span>
               <span><i class="fas fa-microphone"></i> Microfone</span>
             </div>
             <div class="room-price">A partir de <strong>R$ 700<sup>,00</sup></strong></div>
@@ -945,7 +945,7 @@
             <i class="fab fa-whatsapp"></i>
             <div>
               <strong>WhatsApp</strong>
-              <span>(31) 99761-3764</span>
+              <span>(31) 97215-1140</span>
             </div>
           </a>
 
@@ -953,15 +953,15 @@
             <i class="fas fa-phone-alt"></i>
             <div>
               <strong>Ligar agora</strong>
-              <span>(31) 99761-3764</span>
+              <span>(31) 97215-1140</span>
             </div>
           </a>
 
-          <a href="mailto:contato.gabrielbenicio@gmail.com" class="rsv-contact-item rsv-mail">
+          <a href="mailto:reservasdascores@gmail.com" class="rsv-contact-item rsv-mail">
             <i class="fas fa-envelope"></i>
             <div>
               <strong>E-mail</strong>
-              <span>contato.gabrielbenicio@gmail.com</span>
+              <span>reservasdascores@gmail.com</span>
             </div>
           </a>
 
@@ -1028,8 +1028,8 @@
       <div class="footer-col">
         <h4>Contato</h4>
         <ul>
-          <li><a href="tel:+5531997613764">📱 (31) 99761-3764</a></li>
-          <li><a href="mailto:contato@pousadadascores.com.br">✉ contato@pousadadascores.com.br</a></li>
+          <li><a href="tel:+5531972151140">📱 (31) 97215-1140</a></li>
+          <li><a href="mailto:reservasdascores@gmail.com">✉ reservasdascores@gmail.com</a></li>
           <li><a href="#">📍 Rua José de Almeida Matias, 380</a></li>
           <li><a href="#">Cocais – Barão de Cocais/MG</a></li>
         </ul>
@@ -1344,11 +1344,11 @@
      ────────────────────────────────────────────
      ATIVAÇÃO (30 segundos, sem criar conta):
      1. Abra  https://web3forms.com
-     2. Digite  contato.gabrielbenicio@gmail.com
+     2. Digite  reservasdascores@gmail.com
      3. Clique em "Get your Access Key"
      4. Copie a chave gerada e cole abaixo
   ══════════════════════════════════════════ */
-  const W3F_KEY = 'f2c64a7e-ba8a-4b82-bf18-c375aa71b5e5';
+  const W3F_KEY = 'COLE_SUA_CHAVE_AQUI';
 
   /* ---------- Máscara de telefone ---------- */
   function rsvPhoneMask(e) {
@@ -1472,7 +1472,7 @@
     const ts = new Date().toLocaleString('pt-BR');
 
     /* Guarda de segurança: avisa no console se a chave ainda for placeholder */
-    if (!W3F_KEY || W3F_KEY === 'COLE_SUA_CHAVE_AQUI') {
+    if (!W3F_KEY || W3F_KEY === 'COLE_SUA_CHAVE_AQUI' || W3F_KEY === 'f2c64a7e-ba8a-4b82-bf18-c375aa71b5e5') {
       rsvSetLoading(false);
       alert('⚙️ Configure a chave Web3Forms no index.html (W3F_KEY).\nAcesse web3forms.com para gerar a chave gratuita.');
       return;
@@ -1518,7 +1518,7 @@
       const banner = document.getElementById('rsvErrorBanner');
       banner.hidden = false;
       document.getElementById('rsvErrorMsg').textContent =
-        'Não foi possível enviar. Tente novamente ou entre em contato: (31) 99761-3764';
+        'Não foi possível enviar. Tente novamente ou entre em contato: (31) 97215-1140';
       banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     } finally {
       rsvSetLoading(false);
